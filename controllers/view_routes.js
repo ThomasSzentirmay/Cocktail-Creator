@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const User = require('../models/User');
-const Blog = require('../models/Blog')
+const Cocktail = require('../models/Cocktail')
 
 function isAuthenticated(req, res, next) {
   const isAuthenticated = req.session.user_id;
@@ -12,16 +12,16 @@ function isAuthenticated(req, res, next) {
 
 // Show Homepage
 router.get('/', async (req, res) => {
-  let blogs = await Blog.findAll({
+  let cocktails = await Cocktail.findAll({
     include: User
   });
 
-  blogs = blogs.map(t => t.get({plain: true}))
+  cocktails = cocktails.map(t => t.get({plain: true}))
 
   res.render('index', {
     isHome: true,
     isLoggedIn: req.session.user_id,
-    blogs: blogs
+    cocktails: cocktails
   });
 });
 
@@ -46,15 +46,15 @@ router.get('/register', (req, res) => {
 // Show Dashboard Page
 router.get('/dashboard', isAuthenticated, async (req, res) => {
   const user = await User.findByPk(req.session.user_id, {
-    include: Blog
+    include: Cocktail
   });
 
-  const blogs = user.blogs.map(t => t.get({plain: true}))
+  const cocktails = user.cocktails.map(t => t.get({plain: true}))
 
   // The user IS logged in
   res.render('dashboard', {
     userName: user.userName,
-    blogs: blogs
+    cocktails: cocktails
   });
 });
 

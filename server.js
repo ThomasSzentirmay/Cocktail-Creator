@@ -10,7 +10,7 @@ const db = require('./db/connection');
 // Import routes
 const view_routes = require('./controllers/view_routes');
 const user_routes = require('./controllers/user_routes.js');
-const blog_routes = require('./controllers/blog_routes');
+const blog_routes = require('./controllers/cocktail_routes');
 
 const app = express();
 const PORT = process.env.PORT || 3333;
