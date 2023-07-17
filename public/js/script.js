@@ -8,54 +8,40 @@ function togglePasswordVisibility() {
     }
 }
 
-// Fetching cocktails
-// document.addEventListener('DOMContentLoaded', () => {
-//     const form = document.querySelector('form');
-//     const ingredientInput = document.getElementById('ingredient-search');
-//     const nameInput = document.getElementById('name-search');
-//     const cocktailsContainer = document.getElementById('user-cocktails-container');
 
-//     form.addEventListener('submit', (e) => {
-//         e.preventDefault(); // Prevent the form from submitting normally
+// Drink search options when typing
+const nameSearchInput = document.getElementById('name-search');
+const nameSuggestions = document.getElementById('name-suggestions');
 
-//         const ingredient = ingredientInput.value.trim();
-//         const name = nameInput.value.trim();
+nameSearchInput.addEventListener('input', function () {
+    const searchTerm = nameSearchInput.value;
 
-//         if (ingredient || name) {
-//             if (ingredient) {
-//                 fetch(`/api/ingredients/${encodeURIComponent(ingredient)}`)
-//                     .then(response => response.json())
-//                     .then(data => {
-//                         // Handle the response data
-//                         renderCocktails(data);
-//                     })
-//                     .catch(error => {
-//                         console.error('Error:', error);
-//                     });
-//             } else {
-//                 fetch(`/api/name/${encodeURIComponent(name)}`)
-//                     .then(response => response.json())
-//                     .then(data => {
-//                         // Handle the response data
-//                         renderCocktails(data);
-//                     })
-//                     .catch(error => {
-//                         console.error('Error:', error);
-//                     });
-//             }
-//         }
-//     });
+    if (searchTerm.length >= 3) {
+        fetch(`/api/name/${searchTerm}`)
+            .then(response => response.json())
+            .then(data => {
+                nameSuggestions.innerHTML = '';
 
-//     function renderCocktails(data) {
-//         // Clear the previous content
-//         cocktailsContainer.innerHTML = '';
+                if (data.data) {
+                    const suggestions = data.data;
 
-//         // Render the cocktails
-//         const cocktails = JSON.parse(data.data);
-//         cocktails.forEach(cocktail => {
-//             const cocktailElement = document.createElement('div');
-//             cocktailElement.textContent = cocktail.name;
-//             cocktailsContainer.appendChild(cocktailElement);
-//         });
-//     }
-// });
+                    suggestions.forEach(suggestion => {
+                        const suggestionButton = document.createElement('button');
+                        suggestionButton.textContent = suggestion.name;
+                        suggestionButton.addEventListener('click', function () {
+                            favoriteCocktail(suggestion.id);
+                        });
+
+                        nameSuggestions.appendChild(suggestionButton);
+                    });
+                }
+            })
+            .catch(error => console.error('Error:', error));
+    } else {
+        nameSuggestions.innerHTML = '';
+    }
+});
+
+function favoriteCocktail(cocktailId) {
+    console.log(`Favorite cocktail with ID ${cocktailId}`);
+}
