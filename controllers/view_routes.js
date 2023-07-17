@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const User = require('../models/User');
 // const Cocktail = require('../models/Cocktail')
+
 function isAuthenticated(req, res, next) {
   const isAuthenticated = req.session.user_id;
   if (!isAuthenticated) return res.redirect('/login');
@@ -11,6 +12,7 @@ router.get('/', async (req, res) => {
   // let cocktails = await Cocktail.findAll({
   //   include: User
   // });
+
   res.render('index', {
     isHome: true,
     isLoggedIn: req.session.user_id,
@@ -18,11 +20,13 @@ router.get('/', async (req, res) => {
     // cocktails: cocktails
   });
 });
+
 // Verify Age
 router.get('/verify', (req, res) => {
   req.session.ageVerified = true; // Set the age verification status in the session
   res.redirect('/'); // Redirect back to the homepage
 });
+
 // Show Login Page
 router.get('/login', (req, res) => {
   if (req.session.user_id) return res.redirect('/dashboard')
@@ -47,6 +51,7 @@ router.get('/dashboard', isAuthenticated, async (req, res) => {
     // const cocktails = await Cocktail.findAll({
     //   where: { userId: user.id },
     // });
+
     res.render('dashboard', {
       userName: user.userName,
       ageVerified: req.session.ageVerified
@@ -57,4 +62,6 @@ router.get('/dashboard', isAuthenticated, async (req, res) => {
     res.status(500).send('Internal Server Error');
   }
 });
+
 module.exports = router;
+
