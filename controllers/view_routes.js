@@ -4,12 +4,9 @@ const User = require('../models/User');
 
 function isAuthenticated(req, res, next) {
   const isAuthenticated = req.session.user_id;
-
   if (!isAuthenticated) return res.redirect('/login');
-
   next();
 }
-
 // Show Homepage
 router.get('/', async (req, res) => {
   // let cocktails = await Cocktail.findAll({
@@ -33,28 +30,23 @@ router.get('/verify', (req, res) => {
 // Show Login Page
 router.get('/login', (req, res) => {
   if (req.session.user_id) return res.redirect('/dashboard')
-
   return res.render('login', {
     isLogin: true,
     ageVerified: req.session.ageVerified
   });
 });
-
 // Show Register Page
 router.get('/register', (req, res) => {
   if (req.session.user_id) return res.redirect('/dashboard')
-
   res.render('register', {
     isRegister: true,
     ageVerified: req.session.ageVerified
   });
 });
-
 // Show Dashboard Page
 router.get('/dashboard', isAuthenticated, async (req, res) => {
   try {
     const user = await User.findByPk(req.session.user_id);
-
     // Fetch the user's cocktails
     // const cocktails = await Cocktail.findAll({
     //   where: { userId: user.id },
@@ -72,3 +64,4 @@ router.get('/dashboard', isAuthenticated, async (req, res) => {
 });
 
 module.exports = router;
+
