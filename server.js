@@ -10,6 +10,7 @@ const db = require('./config/connection');
 // Import routes
 const view_routes = require('./controllers/view_routes');
 const user_routes = require('./controllers/user_routes.js');
+const api_routes = require('./controllers/api_routes');
 
 const app = express();
 const PORT = process.env.PORT || 3333;
@@ -43,7 +44,7 @@ app.use(session({
 }));
 
 // Load Routes
-app.use('/', [view_routes, user_routes]);
+app.use('/', [view_routes, user_routes, api_routes]);
 
 // Connect to the db and create all tables based off of our models
 db.sync({ force: false })

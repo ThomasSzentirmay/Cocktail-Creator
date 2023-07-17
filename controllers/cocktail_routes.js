@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const User = require('../models/User')
-const Cocktail = require('../models/Cocktail')
+// const Cocktail = require('../models/Cocktail')
 
 function isAuthenticated(req, res, next) {
     const isAuthenticated = req.session.user_id;
