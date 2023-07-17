@@ -1,3 +1,7 @@
+
+const router = require('express').Router();
+
+
 application.get("/api/ingredients/:ingName", (req, res) => {
     
     request.get({
@@ -14,3 +18,4 @@ application.get("/api/ingredients/:ingName", (req, res) => {
     res.json({...data})
 
 })
+

@@ -1,5 +1,6 @@
 const { Model, DataTypes } = require('sequelize');
 const { hash, compare } = require('bcrypt');
+
 const db = require('../config/connection');
 const Cocktail = require('./Cocktail');
 
@@ -9,13 +10,13 @@ class User extends Model { }
 User.init({
   userName: {
     type: DataTypes.STRING,
-    unique: true, // users can't reuse emails when signing up
+    unique: true, 
     allowNull: false,
   },
   password: {
     type: DataTypes.STRING,
     validate: {
-      min: 6 //here you can create a regular expression to make users include certain things in their passwords like numbers and special chars
+      min: 6 
     }
   }
 }, {
@@ -37,7 +38,7 @@ User.prototype.validatePass = async function(formPassword) {
   return isValid;
 }
 
+
 User.hasMany(Cocktail);
 Cocktail.belongsTo(User);
 
-module.exports = User;
