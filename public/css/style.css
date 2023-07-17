@@ -5,4 +5,17 @@
 nav a:not(:last-child) {
     margin-right: 10px; /* Add right margin between navigation items */
   }
-  
+
+.space {
+    margin-right: 10px;
+    margin-top: 10px;
+}
+
+.btn-large {
+    background-color: #ee6e73;
+}
+
+.btn-large:hover {
+    background-color: rgb(247, 211, 216);
+    color: #ee6e73;
+  }
