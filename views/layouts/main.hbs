@@ -10,9 +10,9 @@
 <body>
   {{#if ageVerified}}
     <!-- Home Page -->
-    <header>
-      <h3>Cocktail Website</h3>
-      <nav>
+    <header class="center-align">
+      <h1 class="header text-darken-2">Cocktail Website</h1>
+      <nav class="nav-wrapper">
         <a href="/" class="{{#if isHome}}active{{/if}}">Home</a>
         {{#if userName}}
           <p>Welcome, {{userName}}</p>
@@ -32,14 +32,22 @@
     </main>
   {{else}}
     {{!-- Verify Age Conditional --}}
-    <div class="age-verification">
-      <h2>Are you 21 years of age or older?</h2>
-      <div class="verification-buttons">
-        <a href="/verify" class="Btn yesBtn">Yes</a>
-        <a href="/sorry" class="btn">No</a>
+    <div class="row age21">
+  <div class="col s12 m6 offset-m3">
+    <div class="card age-verification-card">
+      <div class="card-content teal lighten-2 white-text center-align">
+        <h2 class="flow-text">Are you 21 years of age or older?</h2>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. At quas veniam iusto magni in fugit alias aut ullam tenetur, aliquam ut dicta omnis suscipit nihil hic odio! Non, temporibus ipsam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim quos nemo necessitatibus repudiandae suscipit labore molestiae quibusdam voluptatum sed rem id fuga, ratione saepe! Assumenda omnis pariatur eaque ipsam in.</p>
+        <div class="verification-buttons">
+          <a href="/verify" class="waves-effect waves-light btn green">Yes</a>
+          <a href="/sorry" class="waves-effect waves-light btn red">No</a>
+        </div>
       </div>
     </div>
-  {{/if}}
+  </div>
+</div>
+{{/if}}
+
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   {{!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> --}}
   <script src="/js/script.js"></script>
