@@ -21,15 +21,15 @@ nameSearchInput.addEventListener('input', function () {
             .then(data => {
                 nameSuggestions.innerHTML = '';
 
-                if (data.data && data.data.drinks) {
-                    const suggestions = data.data.drinks;
+                if (data.data) {
+                    const suggestions = data.data;
 
                     suggestions.forEach(suggestion => {
                         const suggestionButton = document.createElement('button');
-                        suggestionButton.textContent = suggestion.strDrink;
+                        suggestionButton.textContent = suggestion.name;
                         suggestionButton.addEventListener('click', function () {
                             // Handle the click event to favorite the selected cocktail name
-                            favoriteCocktail(suggestion.idDrink);
+                            favoriteCocktail(suggestion.id);
                         });
 
                         nameSuggestions.appendChild(suggestionButton);
