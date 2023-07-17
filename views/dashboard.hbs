@@ -1,13 +1,27 @@
 <h1>Dashboard</h1>
 
-<form action="/cocktail" method="POST">
+<form action="/drink" method="POST">
     <input type="text" id="ingredient-search" placeholder="Enter an ingredient">
     <div id="ingredient-suggestions"></div>
     <br>
+    <p>or</p>
     <input type="text" id="name-search" placeholder="Enter a cocktail name">
     <div id="name-suggestions"></div>
+    <button>submit</button>
 </form>
 
 <main class="cocktails">
     <div id="user-cocktails-container"></div>
 </main>
+
+
+{{!-- JD Suggestions --}}
+{{!-- {{#each drinks}}
+    <div class="drink">
+        <h3>{{drink_name}}</h3>
+        <form action="/drink" method="POST">
+            <input type="hidden" name="drink_name" value="{{drink_name}}">
+            <button>Favorite Drink</button>
+        </form>
+    </div>
+{{/each}} --}}
