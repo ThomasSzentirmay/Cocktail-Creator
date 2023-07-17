@@ -1,4 +1,15 @@
-<h1>What Our Community Is Drinking!</h1>
+<h1>Need a drink?</h1>
+<p>We've got you covered. We'll help you find an awesome cocktail recipe so that you can be your own mixologist right at home.</p>
+
+<form action="/drink" method="POST">
+    <input type="text" id="ingredient-search" placeholder="Enter an ingredient">
+    <div id="ingredient-suggestions"></div>
+    <br>
+    <p>or</p>
+    <input type="text" id="name-search" placeholder="Enter a cocktail name">
+    <div id="name-suggestions"></div>
+    <button>submit</button>
+</form>
 
 <ul>
     {{#each cocktails}}
