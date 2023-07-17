@@ -1,14 +1,10 @@
 <h1>Dashboard</h1>
 
-<form action="/cocktails" method="POST">
-    <input name="text" type="text" placeholder="Share your thought!">
-    <button>Submit</button>
+<form action="/cocktail" method="POST">
+    <input type="text" id="ingredient-search" placeholder="Enter an ingredient">
+    <div id="ingredient-suggestions"></div>
 </form>
 
 <main class="cocktails">
-    {{#each blogs}}
-    <div class="cocktail">
-        <p>{{text}}</p>
-    </div>
-    {{/each}}
+    <div id="user-cocktails-container"></div>
 </main>
