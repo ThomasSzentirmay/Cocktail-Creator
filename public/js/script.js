@@ -8,6 +8,8 @@ function togglePasswordVisibility() {
     }
 }
 
+
+// Drink search options when typing
 const nameSearchInput = document.getElementById('name-search');
 const nameSuggestions = document.getElementById('name-suggestions');
 
@@ -15,7 +17,6 @@ nameSearchInput.addEventListener('input', function () {
     const searchTerm = nameSearchInput.value;
 
     if (searchTerm.length >= 3) {
-        // Make an AJAX request to the API route to get cocktail name suggestions
         fetch(`/api/name/${searchTerm}`)
             .then(response => response.json())
             .then(data => {
@@ -28,7 +29,6 @@ nameSearchInput.addEventListener('input', function () {
                         const suggestionButton = document.createElement('button');
                         suggestionButton.textContent = suggestion.name;
                         suggestionButton.addEventListener('click', function () {
-                            // Handle the click event to favorite the selected cocktail name
                             favoriteCocktail(suggestion.id);
                         });
 
@@ -43,6 +43,5 @@ nameSearchInput.addEventListener('input', function () {
 });
 
 function favoriteCocktail(cocktailId) {
-    // You can implement the logic to handle the favorite functionality here
     console.log(`Favorite cocktail with ID ${cocktailId}`);
 }
