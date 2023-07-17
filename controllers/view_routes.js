@@ -23,8 +23,8 @@ router.get('/', async (req, res) => {
 
 // Verify Age
 router.get('/verify', (req, res) => {
-  req.session.ageVerified = true; // Set the age verification status in the session
-  res.redirect('/'); // Redirect back to the homepage
+  req.session.ageVerified = true; 
+  res.redirect('/'); 
 });
 
 // Show Login Page
@@ -35,6 +35,7 @@ router.get('/login', (req, res) => {
     ageVerified: req.session.ageVerified
   });
 });
+
 // Show Register Page
 router.get('/register', (req, res) => {
   if (req.session.user_id) return res.redirect('/dashboard')
@@ -43,6 +44,7 @@ router.get('/register', (req, res) => {
     ageVerified: req.session.ageVerified
   });
 });
+
 // Show Dashboard Page
 router.get('/dashboard', isAuthenticated, async (req, res) => {
   try {
