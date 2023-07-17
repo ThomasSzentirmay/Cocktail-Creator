@@ -42,3 +42,4 @@ User.prototype.validatePass = async function(formPassword) {
 User.hasMany(Cocktail);
 Cocktail.belongsTo(User);
 
+module.exports = User;
