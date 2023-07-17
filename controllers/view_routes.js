@@ -56,7 +56,8 @@ router.get('/dashboard', isAuthenticated, async (req, res) => {
 
     res.render('dashboard', {
       userName: user.userName,
-      ageVerified: req.session.ageVerified
+      ageVerified: req.session.ageVerified,
+      isLoggedIn: req.session.user_id
       // cocktails
     });
   } catch (error) {
