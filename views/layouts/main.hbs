@@ -9,22 +9,18 @@
 </head>
 <body>
   {{#if ageVerified}}
-    <!-- Home Page -->
     <header class="center-align">
       <h1 class="header text-darken-2">Cocktail Website</h1>
       <nav class="nav-wrapper">
         <a href="/" class="{{#if isHome}}active{{/if}}">Home</a>
-        {{#if userName}}
-          <p>Welcome, {{userName}}</p>
-          <a href="/logout">Log Out</a>
-        {{else}}
           {{#if isLoggedIn}}
             <a href="/dashboard">Dashboard</a>
+            <p>Welcome, {{userName}}</p>
+            <a href="/logout">Log Out</a>
           {{else}}
             <a href="/login" class="{{#if isLogin}}active{{/if}}">Login</a>
             <a href="/register" class="{{#if isRegister}}active{{/if}}">Register</a>
           {{/if}}
-        {{/if}}
       </nav>
     </header>
     <main>
