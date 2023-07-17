@@ -12,10 +12,12 @@
     <header class="center-align">
       <h1 class="header text-darken-2">Cocktail Website</h1>
       <nav class="nav-wrapper">
-        <a href="/" class="{{#if isHome}}active{{/if}}">Home</a>
+          {{#unless isHome}}
+            <a href="/" >Home</a>
+          {{/unless}}
           {{#if isLoggedIn}}
             <a href="/dashboard">Dashboard</a>
-            <p>Welcome, {{userName}}</p>
+            {{!-- <p>Welcome, {{userName}}</p> --}}
             <a href="/logout">Log Out</a>
           {{else}}
             <a href="/login" class="{{#if isLogin}}active{{/if}}">Login</a>

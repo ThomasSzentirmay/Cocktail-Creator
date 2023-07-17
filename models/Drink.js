@@ -1,20 +1,20 @@
 const { Model, DataTypes } = require('sequelize');
 const db = require('../config/connection');
 
-class Cocktail extends Model {}
+class Drink extends Model {}
 
-Cocktail.init(
+Drink.init(
   {
-    name: {
+    userName: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    uploadedBy: {
+    createdAt: {
       type: DataTypes.STRING,
       allowNull: false,
     },
     image: {
-      type: DataTypes.STRING,
+      type: DataTypes.BLOB,
       allowNull: false,
     },
   },
@@ -24,4 +24,4 @@ Cocktail.init(
   }
 );
 
-module.exports = Cocktail;
+module.exports = Drink;
