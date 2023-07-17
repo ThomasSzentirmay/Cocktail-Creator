@@ -20,7 +20,7 @@ Drink.init(
   },
   {
     sequelize: db,
-    modelName: 'Cocktail',
+    modelName: 'Drink',
   }
 );
 
