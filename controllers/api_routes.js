@@ -7,7 +7,7 @@ application.get("/api/ingredients/:ingName", (req, res) => {
     request.get({
       url: 'https://api.api-ninjas.com/v1/cocktail?name=' + name,
       headers: {
-        'X-Api-Key': '6zgximvyjWj9Nafs2JwscxhhNDaumMnBfFu6A3Ww'
+        'X-Api-Key': ''
       },
     }, function(error, response, body) {
       if(error) return console.error('Request failed:', error);
