@@ -5,7 +5,7 @@ const { engine } = require('express-handlebars');
 // Import express session
 const session = require('express-session');
 // Import our db connection
-const db = require('./db/connection');
+const db = require('./config/connection');
 
 // Import routes
 const view_routes = require('./controllers/view_routes');
