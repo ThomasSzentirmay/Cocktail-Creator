@@ -1,0 +1,8 @@
+.age21 {
+    margin-top: 15%;
+}
+
+nav a:not(:last-child) {
+    margin-right: 10px; /* Add right margin between navigation items */
+  }
+  
