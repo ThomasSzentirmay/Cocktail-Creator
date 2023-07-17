@@ -8,54 +8,41 @@ function togglePasswordVisibility() {
     }
 }
 
-// Fetching cocktails
-// document.addEventListener('DOMContentLoaded', () => {
-//     const form = document.querySelector('form');
-//     const ingredientInput = document.getElementById('ingredient-search');
-//     const nameInput = document.getElementById('name-search');
-//     const cocktailsContainer = document.getElementById('user-cocktails-container');
+const nameSearchInput = document.getElementById('name-search');
+const nameSuggestions = document.getElementById('name-suggestions');
 
-//     form.addEventListener('submit', (e) => {
-//         e.preventDefault(); // Prevent the form from submitting normally
+nameSearchInput.addEventListener('input', function () {
+    const searchTerm = nameSearchInput.value;
 
-//         const ingredient = ingredientInput.value.trim();
-//         const name = nameInput.value.trim();
+    if (searchTerm.length >= 3) {
+        // Make an AJAX request to the API route to get cocktail name suggestions
+        fetch(`/api/name/${searchTerm}`)
+            .then(response => response.json())
+            .then(data => {
+                nameSuggestions.innerHTML = '';
 
-//         if (ingredient || name) {
-//             if (ingredient) {
-//                 fetch(`/api/ingredients/${encodeURIComponent(ingredient)}`)
-//                     .then(response => response.json())
-//                     .then(data => {
-//                         // Handle the response data
-//                         renderCocktails(data);
-//                     })
-//                     .catch(error => {
-//                         console.error('Error:', error);
-//                     });
-//             } else {
-//                 fetch(`/api/name/${encodeURIComponent(name)}`)
-//                     .then(response => response.json())
-//                     .then(data => {
-//                         // Handle the response data
-//                         renderCocktails(data);
-//                     })
-//                     .catch(error => {
-//                         console.error('Error:', error);
-//                     });
-//             }
-//         }
-//     });
+                if (data.data && data.data.drinks) {
+                    const suggestions = data.data.drinks;
 
-//     function renderCocktails(data) {
-//         // Clear the previous content
-//         cocktailsContainer.innerHTML = '';
+                    suggestions.forEach(suggestion => {
+                        const suggestionButton = document.createElement('button');
+                        suggestionButton.textContent = suggestion.strDrink;
+                        suggestionButton.addEventListener('click', function () {
+                            // Handle the click event to favorite the selected cocktail name
+                            favoriteCocktail(suggestion.idDrink);
+                        });
 
-//         // Render the cocktails
-//         const cocktails = JSON.parse(data.data);
-//         cocktails.forEach(cocktail => {
-//             const cocktailElement = document.createElement('div');
-//             cocktailElement.textContent = cocktail.name;
-//             cocktailsContainer.appendChild(cocktailElement);
-//         });
-//     }
-// });
+                        nameSuggestions.appendChild(suggestionButton);
+                    });
+                }
+            })
+            .catch(error => console.error('Error:', error));
+    } else {
+        nameSuggestions.innerHTML = '';
+    }
+});
+
+function favoriteCocktail(cocktailId) {
+    // You can implement the logic to handle the favorite functionality here
+    console.log(`Favorite cocktail with ID ${cocktailId}`);
+}
