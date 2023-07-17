@@ -5,7 +5,7 @@ const { engine } = require('express-handlebars');
 // Import express session
 const session = require('express-session');
 // Import our db connection
-const db = require('./db/connection');
+const db = require('./config/connection');
 
 // Import routes
 const view_routes = require('./controllers/view_routes');
@@ -18,6 +18,13 @@ const PORT = process.env.PORT || 3333;
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
+
+app.use(function (req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, authorization");
+    res.header("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, DELETE");
+    next();
+});
 
 // Setup Handlebars Template Engine
 app.engine('hbs', engine({
@@ -37,8 +44,6 @@ app.use(session({
 
 // Load Routes
 app.use('/', [view_routes, user_routes]);
-
-
 
 // Connect to the db and create all tables based off of our models
 db.sync({ force: false })

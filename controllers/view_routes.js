@@ -1,6 +1,8 @@
 const router = require('express').Router();
 const User = require('../models/User');
 
+const Cocktail = require('../models/Cocktail')
+
 function isAuthenticated(req, res, next) {
   const isAuthenticated = req.session.user_id;
 
@@ -11,16 +13,14 @@ function isAuthenticated(req, res, next) {
 
 // Show Homepage
 router.get('/', async (req, res) => {
-  let blogs = await Blog.findAll({
+  let cocktails = await Cocktail.findAll({
     include: User
   });
-
-  blogs = blogs.map(t => t.get({plain: true}))
 
   res.render('index', {
     isHome: true,
     isLoggedIn: req.session.user_id,
-    blogs: blogs
+    cocktails: cocktails
   });
 });
 
@@ -44,17 +44,22 @@ router.get('/register', (req, res) => {
 
 // Show Dashboard Page
 router.get('/dashboard', isAuthenticated, async (req, res) => {
-  const user = await User.findByPk(req.session.user_id, {
-    include: Blog
-  });
+  try {
+    const user = await User.findByPk(req.session.user_id);
 
-  const blogs = user.blogs.map(t => t.get({plain: true}))
+    // Fetch the user's cocktails
+    const cocktails = await Cocktail.findAll({
+      where: { userId: user.id },
+    });
 
-  // The user IS logged in
-  res.render('dashboard', {
-    userName: user.userName,
-    blogs: blogs
-  });
+    res.render('dashboard', {
+      userName: user.userName,
+      cocktails,
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Internal Server Error');
+  }
 });
 
 module.exports = router;

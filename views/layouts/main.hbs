@@ -3,35 +3,50 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title></title>
+  <title>Cocktail Website</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-  <header>
-    <h3>The Tech Blog</h3>
-    <nav>
-      <a href="/" class="{{#if isHome}}active{{/if}}">Home</a>
-      {{#if userName}}
-        <p>Welcome, {{userName}}</p>
-        <a href="/logout">Log Out</a>
+  {{#if ageVerified}}
+    <!-- Home Page -->
+    <header>
+      <h3>Cocktail Website</h3>
+      <nav>
+        <a href="/" class="{{#if isHome}}active{{/if}}">Home</a>
+        {{#if userName}}
+          <p>Welcome, {{userName}}</p>
+          <a href="/logout">Log Out</a>
         {{else}}
-        {{#if isLoggedIn}}
-          <a href="/dashboard">Dashboard</a>
+          {{#if isLoggedIn}}
+            <a href="/dashboard">Dashboard</a>
           {{else}}
-          <a href="/login" class="{{#if isLogin}}active{{/if}}">Login</a>
-          <a href="/register" class="{{#if isRegister}}active{{/if}}">Register</a>
+            <a href="/login" class="{{#if isLogin}}active{{/if}}">Login</a>
+            <a href="/register" class="{{#if isRegister}}active{{/if}}">Register</a>
+          {{/if}}
         {{/if}}
-      {{/if}}
-    </nav>
-  </header>
+      </nav>
+    </header>
 
-  {{{body}}}
+    <main>
+      {{{body}}}
+    </main>
+
+  {{else}}
+    
+    {{!-- Verify Age Conditional --}}
+    <div class="age-verification">
+      <h2>Are you 21 years of age or older?</h2>
+      <div class="verification-buttons">
+        <a href="/home" class="btn">Yes</a>
+        <a href="/sorry" class="btn">No</a>
+      </div>
+    </div>
+  {{/if}}
 
 
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-  <script src="/js/cocktailAPI.js"></script>
+  {{!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> --}}
   <script src="/js/script.js"></script>
 </body>
 </html>
