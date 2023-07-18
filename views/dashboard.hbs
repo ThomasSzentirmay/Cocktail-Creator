@@ -1,28 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cocktail Website</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-  <link rel="stylesheet" href="/css/style.css">
-  </head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cocktail Website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
 <body>
+    <h1 class="center-align">Your Favorites</h1>
 
-<h1>Your favorites</h1>
-
-
-{{#if favorites}}
-  <ul>
-    {{#each favorites}}
-      <p>{{this.cocktailName}}</p>
-      <p>{{this.createdAt}}</p>
-    {{/each}}
-  </ul>
-{{else}}
-  <p>No favorite cocktails found.</p>
-{{/if}}
+    <div class="contain center-align">
+        <form action="/drink" method="POST">
+            <input type="text" id="name-search" placeholder="Enter a cocktail name">
+            <div id="name-suggestions" class="center-align"></div>
+        </form>
+    </div>
 
 
+    {{#if favorites}}
+      <ul>
+        {{#each favorites}}
+          <p>{{this.cocktailName}}</p>
+          <p>{{this.createdAt}}</p>
+        {{/each}}
+      </ul>
+    {{else}}
+      <p>No favorite cocktails found.</p>
+    {{/if}}
 </body>
+
 </html>

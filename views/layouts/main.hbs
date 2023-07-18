@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,49 +8,55 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <link rel="stylesheet" href="/css/style.css">
 </head>
+
 <body>
   {{#if ageVerified}}
-    <header>
-      <nav class="nav-wrapper blue darken-3">
-          <a href="/" class="brand-logo">MixMate</a>
-         <ul id="nav-mobile" class="right">
-            {{#unless isHome}}
-            <li> <a href="/" >Home</a></li>
-            {{/unless}}
-            {{#if isLoggedIn}}
-              <li><a href="/dashboard">Dashboard</a></li>
-              {{!-- <p>Welcome, {{userName}}</p> --}}
-              <li><a href="/logout">Log Out</a></li>
-            {{else}}
-            <li><a href="/login" class="{{#if isLogin}}active{{/if}}">Login</a></li>
-              <li><a href="/register" class="{{#if isRegister}}active{{/if}}">Register</a></li>
-            {{/if}}
-          </ul>
-      </nav>
-    </header>
-    <main>
-      {{{body}}}
-    </main>
+  <header>
+    <nav class="nav-wrapper blue darken-3">
+      <a href="/" class="brand-logo">MixMate</a>
+      <ul id="nav-mobile" class="right">
+        {{#unless isHome}}
+        <li> <a href="/">Home</a></li>
+        {{/unless}}
+        {{#if isLoggedIn}}
+        <li><a href="/dashboard">Dashboard</a></li>
+        {{!-- <p>Welcome, {{userName}}</p> --}}
+        <li><a href="/logout">Log Out</a></li>
+        {{else}}
+        <li><a href="/login" class="{{#if isLogin}}active{{/if}}">Login</a></li>
+        <li><a href="/register" class="{{#if isRegister}}active{{/if}}">Register</a></li>
+        {{/if}}
+      </ul>
+    </nav>
+  </header>
+  <main>
+    {{{body}}}
+  </main>
+  
+ 
   {{else}}
-    {{!-- Verify Age Conditional --}}
-    <div class="row age21">
-  <div class="col s12 m6 offset-m3">
-    <div class="card age-verification-card">
-      <div class="card-content teal lighten-2 white-text center-align">
-        <h2 class="flow-text">Are you 21 years of age or older?</h2>
-        <p>I verify that I am over the legal drinking age.</p>
-        <div class="verification-buttons">
-          <a href="/verify" class="waves-effect waves-light btn green">Yes</a>
-          <a href="/sorry" class="waves-effect waves-light btn red">No</a>
+  {{!-- Verify Age Conditional --}}
+  <div class="row age21">
+    <div class="col s12 m6 offset-m3">
+      <div class="card age-verification-card">
+        <div class="card-content teal lighten-2 white-text center-align">
+          <h2 class="flow-text">Are you 21 years of age or older?</h2>
+          <p>I verify that I am over the legal drinking age.</p>
+          <div class="verification-buttons">
+            <a href="/verify" class="waves-effect waves-light btn green">Yes</a>
+            <a href="/sorry" class="waves-effect waves-light btn red">No</a>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
-{{/if}}
+  {{/if}}
+   
+
 
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script src="/js/script.js"></script>
 </body>
+
 </html>

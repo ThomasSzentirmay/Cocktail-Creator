@@ -19,3 +19,33 @@ nav a:not(:last-child) {
     background-color: rgb(247, 211, 216);
     color: #ee6e73;
   }
+
+  .text-center1 {
+    text-align: center;
+  }
+
+#show-password{
+  margin-top: 8px;
+}
+
+#action-button{
+  margin-top: 10px;
+}
+
+.mt{
+    margin-top: 200px;
+}
+
+  .contain {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
