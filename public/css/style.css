@@ -20,6 +20,18 @@ nav a:not(:last-child) {
     color: #ee6e73;
   }
 
+  .text-center1 {
+    text-align: center;
+  }
+
+#show-password{
+  margin-top: 8px;
+}
+
+#action-button{
+  margin-top: 10px;
+}
+
 .mt{
     margin-top: 200px;
 }
