@@ -30,7 +30,8 @@ router.get('/verify', (req, res) => {
 // Show sorry page
 router.get('/sorry', async (req, res) => {
   res.render('sorry', {
-    ageVerified: req.session.ageVerified
+    layout: "error.hbs",
+   
   });
 });
 
