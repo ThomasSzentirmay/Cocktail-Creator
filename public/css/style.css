@@ -12,8 +12,12 @@ body {
 
 #hero-image {
   background-image: url("../images/cocktail-pour-unsplash.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
+  position: fixed;
+  top: 62px;
+  left: 0;
+  width: 100vw;
+  height: 50vh;
+  object-fit: cover;
 }
 
 .hero-content {
@@ -90,9 +94,10 @@ body {
 }
 
 /* Overwrite materialize styles - inputs */
-input:not([type]):focus:not([readonly]),
-input[type="text"]:not(.browser-default):focus:not([readonly]), input[type="password"]:not(.browser-default):focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]) {
+input:not([type]),
+input[type="text"]:not(.browser-default), input[type="password"]:not(.browser-default), textarea.materialize-textarea {
     border-bottom: none;
     -webkit-box-shadow: none;
     box-shadow: none;
+    color: white;
 };
