@@ -1,11 +1,29 @@
+html {
+  height: 100%
+}
+
+body {
+  height: 100%;
+}
+
 .age21 {
     margin-top: 15%;
 }
 
-nav a:not(:last-child) {
-    margin-right: 10px;
-    /* Add right margin between navigation items */
+#hero-image {
+  background-image: url("../images/cocktail-pour-unsplash.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
+
+.hero-content {
+  color: white;
+   
+}
+
+/* .hero-content p {
+  
+} */
 
 .space {
     margin-right: 10px;
