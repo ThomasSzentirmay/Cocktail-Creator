@@ -27,6 +27,13 @@ router.get('/verify', (req, res) => {
   res.redirect('/'); 
 });
 
+// Show sorry page
+router.get('/sorry', async (req, res) => {
+  res.render('sorry', {
+    ageVerified: req.session.ageVerified
+  });
+});
+
 // Show Login Page
 router.get('/login', (req, res) => {
   if (req.session.user_id) return res.redirect('/dashboard')
