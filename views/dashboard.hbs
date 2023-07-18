@@ -21,11 +21,15 @@
 
 
     {{#if favorites}}
-      <ul>
+      <ul class="collapsible">
         {{#each favorites}}
-          <p>{{this.cocktailName}}</p>
-          <p>{{this.createdAt}}</p>
-          <button id="upload_widget" class="cloudinary-button">Upload files</button>
+          <li>
+            <p class="collapsible-header">{{this.cocktailName}}</p>
+            <div class="collapsible-body">
+              <p>{{this.createdAt}}</p>
+              <button data-id="{{this.id}}" class="cloudinary-button upload-widget">Upload files</button>
+            </div>
+          </li>
         {{/each}}
       </ul>
     {{else}}
@@ -33,21 +37,30 @@
     {{/if}}
 </body>
 
-<script src="https://upload-widget.cloudinary.com/global/all.js" type="text/javascript"></script>  
 
+{{!-- Cloudinary stuff --}}
+<script src="https://upload-widget.cloudinary.com/global/all.js" type="text/javascript"></script>  
 <script type="text/javascript">  
+let favorite_id;
 var myWidget = cloudinary.createUploadWidget({
-  cloudName: 'my_cloud_name', 
-  uploadPreset: 'my_preset'}, (error, result) => { 
+    cloudName: 'djomeywuu', 
+    uploadPreset: 'ecup6hng'
+  }, (error, result) => { 
     if (!error && result && result.event === "success") { 
       console.log('Done! Here is the image info: ', result.info); 
+      // fetch PUT request to update the favorite in the db, using the favorite_id above
+      // The body would contain a url which would come from result.info.url  
     }
   }
 )
 
-document.getElementById("upload_widget").addEventListener("click", function(){
+document.addEventListener('click', e => {
+  const el = e.target;
+  if (el.classList.contains('upload-widget')) {
+    favorite_id = el.dataset.id;
     myWidget.open();
-  }, false);
+  }
+})
 </script>
 
 </html>
