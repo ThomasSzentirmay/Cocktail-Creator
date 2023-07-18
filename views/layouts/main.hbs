@@ -9,20 +9,22 @@
 </head>
 <body>
   {{#if ageVerified}}
-    <header class="center-align">
-      <h1 class="header text-darken-2">Cocktail Website</h1>
-      <nav class="nav-wrapper">
-          {{#unless isHome}}
-            <a href="/" >Home</a>
-          {{/unless}}
-          {{#if isLoggedIn}}
-            <a href="/dashboard">Dashboard</a>
-            {{!-- <p>Welcome, {{userName}}</p> --}}
-            <a href="/logout">Log Out</a>
-          {{else}}
-            <a href="/login" class="{{#if isLogin}}active{{/if}}">Login</a>
-            <a href="/register" class="{{#if isRegister}}active{{/if}}">Register</a>
-          {{/if}}
+    <header>
+      <nav class="nav-wrapper blue darken-3">
+          <a href="/" class="brand-logo">MixMate</a>
+         <ul id="nav-mobile" class="right">
+            {{#unless isHome}}
+            <li> <a href="/" >Home</a></li>
+            {{/unless}}
+            {{#if isLoggedIn}}
+              <li><a href="/dashboard">Dashboard</a></li>
+              {{!-- <p>Welcome, {{userName}}</p> --}}
+              <li><a href="/logout">Log Out</a></li>
+            {{else}}
+            <li><a href="/login" class="{{#if isLogin}}active{{/if}}">Login</a></li>
+              <li><a href="/register" class="{{#if isRegister}}active{{/if}}">Register</a></li>
+            {{/if}}
+          </ul>
       </nav>
     </header>
     <main>
