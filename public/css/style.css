@@ -20,6 +20,20 @@ nav a:not(:last-child) {
     color: #ee6e73;
   }
 
-  .text-center1 {
-    text-align: center;
+.mt{
+    margin-top: 200px;
+}
+
+  .contain {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
+  
+  #form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
