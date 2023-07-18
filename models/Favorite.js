@@ -27,8 +27,8 @@ Favorite.init(
       allowNull: false,
       defaultValue: DataTypes.NOW
     },
-    image: {
-      url: DataTypes.STRING,
+    image_url: {
+      type: DataTypes.STRING,
     }
   },
   {
