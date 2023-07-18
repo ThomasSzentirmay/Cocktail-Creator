@@ -12,14 +12,6 @@
 <body  class="center-align">
     <h1 class="center-align">Your Favorites</h1>
 
-    <div class="contain center-align">
-        <form action="/drink" method="POST">
-            <input type="text" id="name-search" placeholder="Enter a cocktail name">
-            <div id="name-suggestions" class="center-align"></div>
-        </form>
-    </div>
-
-
     {{#if favorites}}
       <ul class="collapsible">
         {{#each favorites}}
