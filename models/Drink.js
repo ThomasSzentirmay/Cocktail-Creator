@@ -5,17 +5,17 @@ class Drink extends Model {}
 
 Drink.init(
   {
-    userName: {
+    cocktailName: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: false
     },
-    createdAt: {
+    ingredients: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: false
     },
-    image: {
-      type: DataTypes.BLOB,
-      allowNull: false,
+    recipe: {
+      type: DataTypes.STRING,
+      allowNull: false
     },
   },
   {
