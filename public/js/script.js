@@ -13,38 +13,40 @@ function togglePasswordVisibility() {
 const nameSearchInput = document.getElementById('name-search');
 const nameSuggestions = document.getElementById('name-suggestions');
 
-nameSearchInput.addEventListener('input', function () {
-    const searchTerm = nameSearchInput.value;
-
-    if (searchTerm.length >= 3) {
-        fetch(`/api/name/${searchTerm}`)
-            .then(response => response.json())
-            .then(data => {
-                nameSuggestions.innerHTML = '';
-
-                if (data.data) {
-                    const suggestions = data.data;
-
-                    suggestions.forEach(suggestion => {
-                        const suggestionButton = document.createElement('button');
-                        suggestionButton.textContent = suggestion.name;
-                        suggestionButton.classList.add('btn-large');
-                        suggestionButton.classList.add('space');
-                        suggestionButton.addEventListener('click', function (event) {
-                            event.preventDefault()
-                            console.log(suggestion)
-                            favoriteCocktail(suggestion.name);
+if (nameSearchInput) {
+    nameSearchInput.addEventListener('input', function () {
+        const searchTerm = nameSearchInput.value;
+    
+        if (searchTerm.length >= 3) {
+            fetch(`/api/name/${searchTerm}`)
+                .then(response => response.json())
+                .then(data => {
+                    nameSuggestions.innerHTML = '';
+    
+                    if (data.data) {
+                        const suggestions = data.data;
+    
+                        suggestions.forEach(suggestion => {
+                            const suggestionButton = document.createElement('button');
+                            suggestionButton.textContent = suggestion.name;
+                            suggestionButton.classList.add('btn-large');
+                            suggestionButton.classList.add('space');
+                            suggestionButton.addEventListener('click', function (event) {
+                                event.preventDefault()
+                                console.log(suggestion)
+                                favoriteCocktail(suggestion.name);
+                            });
+    
+                            nameSuggestions.appendChild(suggestionButton);
                         });
-
-                        nameSuggestions.appendChild(suggestionButton);
-                    });
-                }
-            })
-            .catch(error => console.error('Error:', error));
-    } else {
-        nameSuggestions.innerHTML = '';
-    }
-});
+                    }
+                })
+                .catch(error => console.error('Error:', error));
+        } else {
+            nameSuggestions.innerHTML = '';
+        }
+    });
+}
 
 function favoriteCocktail(cocktailName) {
 
