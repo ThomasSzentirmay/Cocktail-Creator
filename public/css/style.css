@@ -10,24 +10,26 @@ body {
     margin-top: 15%;
 }
 
+.brand-logo {
+  position: fixed;
+  left: 5rem;
+}
+
 #hero-image {
   background-image: url("../images/cocktail-pour-unsplash.jpg");
   position: fixed;
   top: 62px;
   left: 0;
   width: 100vw;
-  height: 50vh;
+  height: 100vh;
   object-fit: cover;
+  background-repeat: no-repeat;
 }
 
 .hero-content {
   color: white;
    
 }
-
-/* .hero-content p {
-  
-} */
 
 .space {
     margin-right: 10px;
@@ -78,8 +80,6 @@ body {
     border: 2px solid #1565C0;
     background-color: #1565C0;
 }
-
-
 
 .card .card-action a:not(.btn):not(.btn-large):not(.btn-small):not(.btn-large):not(.btn-floating) {
     color: #1565C0;
