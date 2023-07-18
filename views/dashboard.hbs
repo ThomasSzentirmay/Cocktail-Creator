@@ -21,7 +21,7 @@
               {{#if this.image_url}}
                 <img src="{{this.image_url}}" class="favorite-image" alt="Uploaded image">
               {{/if}}
-              <p>{{this.createdAt}}</p>
+              <p>Favorited on: {{this.createdAt}}</p>
               <button data-id="{{this.id}}" class="cloudinary-button upload-widget">Upload files</button>
               <button data-id="{{this.id}}" class="remove-button remove-widget" onclick="removeFavorite('{{this.id}}', this)">Remove Favorite</button>
             </div>
