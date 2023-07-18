@@ -79,4 +79,24 @@ router.post('/api/favorites', (req, res) => {
 });
 
 
+
+router.delete('/api/favorites/:id', (req, res) => {
+  const favoriteId = req.params.id;
+
+  Favorite.destroy({
+    where: {
+      id: favoriteId,
+    },
+  })
+    .then(() => {
+      res.json({
+        message: 'Favorite removed successfully',
+      });
+    })
+    .catch(error => {
+      console.error('Error removing favorite:', error);
+      res.status(500).send('Error occurred while removing the favorite cocktail');
+    });
+});
+
 module.exports = router;
