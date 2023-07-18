@@ -3,8 +3,9 @@
 }
 
 nav a:not(:last-child) {
-    margin-right: 10px; /* Add right margin between navigation items */
-  }
+    margin-right: 10px;
+    /* Add right margin between navigation items */
+}
 
 .space {
     margin-right: 10px;
@@ -12,40 +13,68 @@ nav a:not(:last-child) {
 }
 
 .btn-large {
-    background-color: #ee6e73;
+    background-color: #1565C0;
 }
 
 .btn-large:hover {
-    background-color: rgb(247, 211, 216);
-    color: #ee6e73;
-  }
-
-  .text-center1 {
-    text-align: center;
-  }
-
-#show-password{
-  margin-top: 8px;
+    background-color: #bbd5f1;
+    color: #1565C0;
 }
 
-#action-button{
-  margin-top: 10px;
+.text-center1 {
+    text-align: center;
+}
+
+#show-password {
+    margin-top: 8px;
+}
+
+#action-button {
+    margin-top: 10px;
 }
 
 .mt{
     margin-top: 8rem;
 }
 
-  .contain {
+.contain {
     padding: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-  
-  #form {
+}
+
+#form {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+/* Overwrite materialize styles */
+
+[type="checkbox"].filled-in:checked+span:not(.lever):after {
+    border: 2px solid #1565C0;
+    background-color: #1565C0;
+}
+
+
+
+.card .card-action a:not(.btn):not(.btn-large):not(.btn-small):not(.btn-large):not(.btn-floating) {
+    color: #1565C0;
+}
+
+.card .card-action a:not(.btn):not(.btn-large):not(.btn-small):not(.btn-large):not(.btn-floating):hover {
+    color: #c6dcf5; /* Change to the desired color when hovering over the links */
   }
-  
+
+.teal.lighten-2 {
+    background-color: #1565C0!important;
+}
+
+/* Overwrite materialize styles - inputs */
+input:not([type]):focus:not([readonly]),
+input[type="text"]:not(.browser-default):focus:not([readonly]), input[type="password"]:not(.browser-default):focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]) {
+    border-bottom: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+};
