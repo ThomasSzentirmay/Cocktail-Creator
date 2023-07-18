@@ -30,8 +30,10 @@ nameSearchInput.addEventListener('input', function () {
                         suggestionButton.textContent = suggestion.name;
                         suggestionButton.classList.add('btn-large');
                         suggestionButton.classList.add('space'); 
-                        suggestionButton.addEventListener('click', function () {
-                            favoriteCocktail(suggestion.id);
+                        suggestionButton.addEventListener('click', function (event) {
+                            event.preventDefault()
+                            console.log(suggestion)
+                            favoriteCocktail(suggestion.name);
                         });
 
                         nameSuggestions.appendChild(suggestionButton);
@@ -44,6 +46,17 @@ nameSearchInput.addEventListener('input', function () {
     }
 });
 
-function favoriteCocktail(cocktailId) {
-    console.log(`Favorite cocktail with ID ${cocktailId}`);
+function favoriteCocktail(cocktailName) {
+
+    console.log(`Favorite cocktail with ID ${cocktailName}`);
+    //assemble a fetch request manually POST
+    fetch('/api/favorites', {
+        method: "POST",
+        body: JSON.stringify({cocktailName: cocktailName}),
+        headers: {'Content-Type': 'application/json'}
+    }).then(res => res.json())
+        .then(data => {
+            console.log('we did it')
+        })
+
 }

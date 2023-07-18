@@ -2,8 +2,7 @@ const express = require('express');
 const app = express();
 const request = require('request');
 require('dotenv').config();
-const User = require('../path-to-User-model');
-const Favorite = require('../path-to-Favorite-model');
+const {Favorite, User} = require('../models');
 
 
 // get cocktails from NAME
@@ -35,27 +34,31 @@ app.get("/api/name/:Name", (req, res) => {
 
 // Add a favorite cocktail
 app.post('/api/favorites', (req, res) => {
-  const { cocktailId } = req.body;
-  const userId = ;
+  console.log(req.body)
+  const { cocktailName } = req.body;
+  const userId = req.session.user_id; 
+  console.log(cocktailName, userId)
 
-  request.get({
-    url: 'https://api.api-ninjas.com/v1/cocktail?id=' + cocktailId,
-    headers: {
-      'X-Api-Key': process.env.API_KEY
-    },
-  }, function (error, response, body) {
-    if (error) {
-      console.error('Request failed:', error);
-      res.status(500).send('Request failed');
-    } else if (response.statusCode !== 200) {
-      console.error('Error:', response.statusCode, body.toString('utf8'));
-      res.status(response.statusCode).send('Error');
-    } else {
-      const cocktail = JSON.parse(body)[0];
+  // request.get({
+  //   url: 'https://api.api-ninjas.com/v1/cocktail?id=' + cocktailId,
+  //   headers: {
+  //     'X-Api-Key': process.env.API_KEY
+  //   },
+  // }, function (error, response, body) {
+  //   if (error) {
+  //     console.error('Request failed:', error);
+  //     res.status(500).send('Request failed');
+  //   } else if (response.statusCode !== 200) {
+  //     console.error('Error:', response.statusCode, body.toString('utf8'));
+  //     res.status(response.statusCode).send('Error');
+  //   } else {
+  //     const cocktail = JSON.parse(body)[0];
 
       Favorite.create({
-        cocktailName: cocktail.name,
+        cocktailName: cocktailName,
         userId: userId
+      }, {
+        include: [User]
       })
         .then(favorite => {
           res.json(favorite);
@@ -64,8 +67,9 @@ app.post('/api/favorites', (req, res) => {
           console.error('Error:', error);
           res.status(500).send('Error');
         });
-    }
-  });
+    // }
+  // });
 });
+
 
 module.exports = app;

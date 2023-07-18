@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const User = require('../models/User');
-// const Cocktail = require('../models/Cocktail')
+const Drink = require('../models/Drink');
+const Favorite = require('../models/Favorite');
 
 function isAuthenticated(req, res, next) {
   const isAuthenticated = req.session.user_id;
@@ -49,21 +50,41 @@ router.get('/register', (req, res) => {
 router.get('/dashboard', isAuthenticated, async (req, res) => {
   try {
     const user = await User.findByPk(req.session.user_id);
-    // Fetch the user's cocktails
-    // const cocktails = await Cocktail.findAll({
-    //   where: { userId: user.id },
-    // });
+    // Fetch the user's favorite cocktails
+    const favorites = await Favorite.findAll({
+      where: { userId: user.id },
+    });
+    const serFav = favorites.map(favorite => favorite.get({plain:true}))
 
     res.render('dashboard', {
       userName: user.userName,
       ageVerified: req.session.ageVerified,
-      isLoggedIn: req.session.user_id
-      // cocktails
+      isLoggedIn: req.session.user_id,
+      favorites: serFav,
     });
   } catch (error) {
     console.error(error);
     res.status(500).send('Internal Server Error');
   }
+});
+
+router.post('/dashboard', (req, res) => {
+  const userId = req.session.user_id;
+
+  const { cocktailName, cocktailImage } = req.body;
+
+  Favorite.create({
+    cocktailName: cocktailName,
+    userId: userId,
+    cocktailImage: cocktailImage
+  })
+    .then(favorite => {
+      res.redirect('/dashboard');
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      res.status(500).send('Error occurred while saving the favorite cocktail');
+    });
 });
 
 module.exports = router;
