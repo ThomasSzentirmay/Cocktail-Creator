@@ -6,7 +6,12 @@
                     <h3 class="center-align">Sign up</h3>
 
                     <input class="" name="userName" type="text" placeholder="Please enter your username">
-                    <input class="" name="password" type="password" placeholder="Please enter your password">
+                    <input id="password" class="" name="password" type="password" placeholder="Please enter your password">
+                    <div class="show-password">
+                        <input id="showPassword" type="checkbox" onclick="togglePasswordVisibility()">
+                        <label for="showPassword">Show Password</label>
+                    </div>
+
                     <button class="waves-effect waves-light btn-small blue darken-3">Register</button>
                 </form>
             </div>
