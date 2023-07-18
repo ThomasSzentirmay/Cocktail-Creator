@@ -36,4 +36,36 @@ Favorite.init(
   }
 );
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 module.exports = Favorite;
