@@ -1,18 +1,21 @@
-<h1>Need a drink?</h1>
-<p>We've got you covered. We'll help you find an awesome cocktail recipe so that you can be your own mixologist right at home.</p>
+<div class="center-align mt">
+    <h1>Need a drink?</h1>
+    <p>We've got you covered. We'll help you find an awesome cocktail recipe so that you can be your own mixologist
+        right at home.</p>
+</div>
 
-<form action="/drink" method="POST">
-    <input type="text" id="name-search" placeholder="Enter a cocktail name">
-    <div id="name-suggestions"></div>
-    <button>submit</button>
-</form>
-
-<ul>
-    {{#each cocktails}}
+    <div class="contain">
+        <form id="form" action="/drink" method="POST">
+        <input type="text" id="name-search" placeholder="Enter a cocktail name">
+        <div id="name-suggestions"></div>
+    </form>
+    </div>
+    <ul>
+        {{#each cocktails}}
         <li>
             <p>{{text}}</p>
             <p>Added By: {{user.userName}}</p>
             <img src={{image}} alt="Picture of users cocktail">
         </li>
-    {{/each}}
-</ul>
+        {{/each}}
+    </ul>
