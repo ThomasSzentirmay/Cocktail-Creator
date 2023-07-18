@@ -1,11 +1,33 @@
+html {
+  height: 100%
+}
+
+body {
+  height: 100%;
+}
+
 .age21 {
     margin-top: 15%;
 }
 
-nav a:not(:last-child) {
-    margin-right: 10px;
-    /* Add right margin between navigation items */
+#hero-image {
+  background-image: url("../images/cocktail-pour-unsplash.jpg");
+  position: fixed;
+  top: 62px;
+  left: 0;
+  width: 100vw;
+  height: 50vh;
+  object-fit: cover;
 }
+
+.hero-content {
+  color: white;
+   
+}
+
+/* .hero-content p {
+  
+} */
 
 .space {
     margin-right: 10px;
@@ -33,8 +55,8 @@ nav a:not(:last-child) {
     margin-top: 10px;
 }
 
-.mt {
-    margin-top: 150px;
+.mt{
+    margin-top: 8rem;
 }
 
 .contain {
@@ -72,9 +94,10 @@ nav a:not(:last-child) {
 }
 
 /* Overwrite materialize styles - inputs */
-input:not([type]):focus:not([readonly]),
-input[type="text"]:not(.browser-default):focus:not([readonly]), input[type="password"]:not(.browser-default):focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]) {
+input:not([type]),
+input[type="text"]:not(.browser-default), input[type="password"]:not(.browser-default), textarea.materialize-textarea {
     border-bottom: none;
     -webkit-box-shadow: none;
     box-shadow: none;
+    color: white;
 };
