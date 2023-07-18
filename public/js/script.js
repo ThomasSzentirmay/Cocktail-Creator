@@ -25,19 +25,22 @@ if (nameSearchInput) {
     
                     if (data.data) {
                         const suggestions = data.data;
+
     
                         suggestions.forEach(suggestion => {
                             const suggestionButton = document.createElement('button');
                             suggestionButton.textContent = suggestion.name;
                             suggestionButton.classList.add('btn-large');
                             suggestionButton.classList.add('space');
+
+                            nameSuggestions.appendChild(suggestionButton);
                             suggestionButton.addEventListener('click', function (event) {
                                 event.preventDefault()
-                                console.log(suggestion)
-                                favoriteCocktail(suggestion.name);
+                                console.log(isLoggedIn)
+                                if (isLoggedIn) {
+                                    favoriteCocktail(suggestion.name);
+                                }
                             });
-    
-                            nameSuggestions.appendChild(suggestionButton);
                         });
                     }
                 })
@@ -57,8 +60,9 @@ function favoriteCocktail(cocktailName) {
         headers: { 'Content-Type': 'application/json' }
     }).then(res => res.json())
         .then(data => {
-            console.log('we did it')
+            window.location = '/dashboard';
         })
+
 }
 
 // Materialize

@@ -76,24 +76,5 @@ router.get('/dashboard', isAuthenticated, async (req, res) => {
   }
 });
 
-router.post('/dashboard', (req, res) => {
-  const userId = req.session.user_id;
-
-  const { cocktailName, cocktailImage } = req.body;
-
-  Favorite.create({
-    cocktailName: cocktailName,
-    userId: userId,
-    cocktailImage: cocktailImage
-  })
-    .then(favorite => {
-      res.redirect('/dashboard');
-    })
-    .catch(error => {
-      console.error('Error:', error);
-      res.status(500).send('Error occurred while saving the favorite cocktail');
-    });
-});
-
 module.exports = router;
 

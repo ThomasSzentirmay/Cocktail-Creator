@@ -1,12 +1,11 @@
-const express = require('express');
-const app = express();
+const router = require('express').Router();
 const request = require('request');
 require('dotenv').config();
 const {Favorite, User} = require('../models');
 
 
 // get cocktails from NAME
-app.get("/api/name/:Name", (req, res) => {
+router.get("/api/name/:Name", (req, res) => {
   const name = req.params.Name;
 
   request.get({
@@ -33,7 +32,7 @@ app.get("/api/name/:Name", (req, res) => {
 });
 
 // Add a favorite cocktail
-app.put('/api/favorites/:id', (req, res) => {
+router.put('/api/favorites/:id', (req, res) => {
   console.log(req.body)
   const { cocktailName } = req.body;
   const userId = req.session.user_id; 
@@ -57,5 +56,27 @@ app.put('/api/favorites/:id', (req, res) => {
         });
 });
 
+// Add fav
+router.post('/api/favorites', (req, res) => {
+  const userId = req.session.user_id;
 
-module.exports = app;
+  const { cocktailName, cocktailImage } = req.body;
+
+  Favorite.create({
+    cocktailName: cocktailName,
+    userId: userId,
+    cocktailImage: cocktailImage
+  })
+    .then(favorite => {
+      res.json({
+        message: 'Fav added successfully'
+      });
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      res.status(500).send('Error occurred while saving the favorite cocktail');
+    });
+});
+
+
+module.exports = router;
