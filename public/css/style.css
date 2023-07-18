@@ -19,3 +19,7 @@ nav a:not(:last-child) {
     background-color: rgb(247, 211, 216);
     color: #ee6e73;
   }
+
+  .text-center1 {
+    text-align: center;
+  }
