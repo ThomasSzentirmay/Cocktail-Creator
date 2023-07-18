@@ -10,6 +10,14 @@ Favorite.init(
       type: DataTypes.STRING,
       allowNull: false
     },
+    // ingredients: {
+    //   type: DataTypes.STRING,
+    //   allowNull: false
+    // },
+    // recipe: {
+    //   type: DataTypes.STRING,
+    //   allowNull: false
+    // },
     userId: {
       type: DataTypes.INTEGER,
       allowNull: false
@@ -19,9 +27,8 @@ Favorite.init(
       allowNull: false,
       defaultValue: DataTypes.NOW
     },
-    image: {
-      type: DataTypes.BLOB,
-      allowNull: true
+    image_url: {
+      type: DataTypes.STRING,
     }
   },
   {
