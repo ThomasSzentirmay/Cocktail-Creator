@@ -29,7 +29,7 @@ nameSearchInput.addEventListener('input', function () {
                         const suggestionButton = document.createElement('button');
                         suggestionButton.textContent = suggestion.name;
                         suggestionButton.classList.add('btn-large');
-                        suggestionButton.classList.add('space'); // Add class name here
+                        suggestionButton.classList.add('space'); 
                         suggestionButton.addEventListener('click', function () {
                             favoriteCocktail(suggestion.id);
                         });
