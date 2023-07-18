@@ -24,7 +24,12 @@ Favorite.init(
     createdAt: {
       type: DataTypes.DATE,
       allowNull: false,
-      defaultValue: DataTypes.NOW
+      defaultValue: DataTypes.NOW,
+      get() {
+        const date = this.getDataValue('createdAt');
+        const formattedDate = date.toLocaleDateString('en-US');
+        return formattedDate;
+      },
     },
     image_url: {
       type: DataTypes.STRING,
