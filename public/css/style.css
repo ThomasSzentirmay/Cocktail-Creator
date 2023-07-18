@@ -94,10 +94,9 @@ body {
 }
 
 /* Overwrite materialize styles - inputs */
-input:not([type]),
-input[type="text"]:not(.browser-default), input[type="password"]:not(.browser-default), textarea.materialize-textarea {
+input:not([type]):focus:not([readonly]),
+input[type="text"]:not(.browser-default):focus:not([readonly]), input[type="password"]:not(.browser-default):focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]) {
     border-bottom: none;
     -webkit-box-shadow: none;
     box-shadow: none;
-    color: white;
 };
