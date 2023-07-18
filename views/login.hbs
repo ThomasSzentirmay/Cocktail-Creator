@@ -7,9 +7,12 @@
 
                     <input name="userName" type="text" placeholder="Please enter your username">
                     <input id="password" name="password" type="password" placeholder="Please enter your password">
-                    <div class="show-password">
-                        <input id="showPassword" type="checkbox" onclick="togglePasswordVisibility()">
-                        <label for="showPassword">Show Password</label>
+                     <div id="show-password">
+                        <label class="show-password">
+                            <input id="showPassword" type="checkbox" class="filled-in checkbox-blue"
+                                onclick="togglePasswordVisibility()">
+                            <span>Show Password</span>
+                        </label>
                     </div>
 
                     <button class="waves-effect waves-light btn-small blue darken-3">Login</button>
