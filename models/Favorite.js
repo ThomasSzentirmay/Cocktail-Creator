@@ -9,14 +9,14 @@ Favorite.init(
       type: DataTypes.STRING,
       allowNull: false
     },
-    // ingredients: {
-    //   type: DataTypes.STRING,
-    //   allowNull: false
-    // },
-    // recipe: {
-    //   type: DataTypes.STRING,
-    //   allowNull: false
-    // },
+    ingredients: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    recipe: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
     userId: {
       type: DataTypes.INTEGER,
       allowNull: false
@@ -35,37 +35,5 @@ Favorite.init(
     modelName: 'Favorite'
   }
 );
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 module.exports = Favorite;

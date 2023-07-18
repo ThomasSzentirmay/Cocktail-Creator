@@ -23,7 +23,9 @@ router.get("/api/name/:Name", (req, res) => {
     } else {
       const data = JSON.parse(body);
       const cocktails = data.map(cocktail => ({
-        name: cocktail.name
+        name: cocktail.name,
+        ingredients: cocktail.ingredients,
+        instructions: cocktail.instructions
       }));
 
       res.json({ data: cocktails });
@@ -64,6 +66,8 @@ router.post('/api/favorites', (req, res) => {
 
   Favorite.create({
     cocktailName: cocktailName,
+    ingredients: ingredients,
+    recipe: recipe,
     userId: userId,
     cocktailImage: cocktailImage
   })
