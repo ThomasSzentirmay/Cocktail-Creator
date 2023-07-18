@@ -26,6 +26,9 @@
           <li>
             <p class="collapsible-header">{{this.cocktailName}}</p>
             <div class="collapsible-body">
+              {{#if this.image_url}}
+                <img src="{{this.image_url}}" class="favorite-image" alt="Uploaded image">
+              {{/if}}
               <p>{{this.createdAt}}</p>
               <button data-id="{{this.id}}" class="cloudinary-button upload-widget">Upload files</button>
             </div>
@@ -50,7 +53,21 @@ var myWidget = cloudinary.createUploadWidget({
       console.log('Done! Here is the image info: ', result.info); 
       // fetch PUT request to update the favorite in the db, using the favorite_id above
       // The body would contain a url which would come from result.info.url  
-    }
+      fetch(`/api/favorites/${favorite_id}`, {
+          method: 'PUT',
+          headers: {
+              'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ image_url: result.info.url  })
+      })
+        .then(response => response.json())
+        .then(data => {
+            window.location.reload();
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+  }
   }
 )
 

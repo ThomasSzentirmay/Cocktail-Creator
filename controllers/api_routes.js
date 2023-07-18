@@ -33,27 +33,28 @@ app.get("/api/name/:Name", (req, res) => {
 });
 
 // Add a favorite cocktail
-app.post('/api/favorites', (req, res) => {
+app.put('/api/favorites/:id', (req, res) => {
   console.log(req.body)
   const { cocktailName } = req.body;
   const userId = req.session.user_id; 
   console.log(cocktailName, userId)
 
-      Favorite.create({
-        cocktailName: cocktailName,
-        userId: userId
+      Favorite.update({
+        image_url: req.body.image_url
       }, {
-        include: [User]
+        where: {
+          id: req.params.id,
+        }
       })
         .then(favorite => {
-          res.json(favorite);
+          res.json({
+            message: 'Updated successfully'
+          })
         })
         .catch(error => {
           console.error('Error:', error);
           res.status(500).send('Error');
         });
-    // }
-  // });
 });
 
 
