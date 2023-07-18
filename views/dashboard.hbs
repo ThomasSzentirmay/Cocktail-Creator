@@ -23,6 +23,7 @@
               {{/if}}
               <p>{{this.createdAt}}</p>
               <button data-id="{{this.id}}" class="cloudinary-button upload-widget">Upload files</button>
+              <button data-id="{{this.id}}" class="remove-button remove-widget" onclick="removeFavorite('{{this.id}}', this)">Remove Favorite</button>
             </div>
           </li>
         {{/each}}
@@ -70,6 +71,34 @@ document.addEventListener('click', e => {
     myWidget.open();
   }
 })
-</script>
 
+
+
+
+
+
+
+  // Event handler function
+  async function removeFavorite(favoriteId, button) {
+    try {
+      // Make AJAX request to remove the item from the database
+      const response = await fetch(`/api/favorites/${favoriteId}`, {
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+
+      if (response.ok) {
+        // Item successfully removed from the database
+        button.parentNode.removeChild(button);
+        location.reload();
+      } else {
+        console.error('Failed to remove favorite');
+      }
+    } catch (error) {
+      console.error('Error removing favorite:', error);
+    }
+  }
+  </script>
 </html>
