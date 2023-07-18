@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <h1 class="center-align">Dashboard</h1>
+    <h1 class="center-align">Your Favorites</h1>
 
     <div class="contain center-align">
         <form action="/drink" method="POST">
@@ -20,21 +20,16 @@
     </div>
 
 
-    <main class="cocktails">
-        <div id="user-cocktails-container"></div>
-    </main>
-
-
-    {{!-- JD Suggestions --}}
-    {{!-- {{#each drinks}}
-    <div class="drink">
-        <h3>{{drink_name}}</h3>
-        <form action="/drink" method="POST">
-            <input type="hidden" name="drink_name" value="{{drink_name}}">
-            <button>Favorite Drink</button>
-        </form>
-    </div>
-    {{/each}} --}}
+    {{#if favorites}}
+      <ul>
+        {{#each favorites}}
+          <p>{{this.cocktailName}}</p>
+          <p>{{this.createdAt}}</p>
+        {{/each}}
+      </ul>
+    {{else}}
+      <p>No favorite cocktails found.</p>
+    {{/if}}
 </body>
 
 </html>

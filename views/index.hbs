@@ -11,13 +11,14 @@
         <div id="name-suggestions"></div>
     </form>
     </div>
+
+    
     <ul>
         {{#each cocktails}}
-
-        <li>
-            <p>{{text}}</p>
-            <p>Added By: {{user.userName}}</p>
-            <img src={{image}} alt="Picture of users cocktail">
-        </li>
+            <li>
+                <p>{{text}}</p>
+                <p>Added By: {{user.userName}}</p>
+                <img src={{image}} alt="Picture of users cocktail">
+            </li>
         {{/each}}
     </ul>

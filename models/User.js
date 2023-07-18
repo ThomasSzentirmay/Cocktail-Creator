@@ -1,13 +1,15 @@
 const { Model, DataTypes } = require('sequelize');
 const { hash, compare } = require('bcrypt');
-
 const db = require('../config/connection');
-const Drink = require('./Drink');
-
 
 class User extends Model { }
 
 User.init({
+  id: {
+    type: DataTypes.INTEGER,
+    primaryKey: true,
+    autoIncrement: true
+  },
   userName: {
     type: DataTypes.STRING,
     unique: true, 
@@ -39,7 +41,5 @@ User.prototype.validatePass = async function(formPassword) {
 }
 
 
-User.hasMany(Drink);
-Drink.belongsTo(User);
 
 module.exports = User;
