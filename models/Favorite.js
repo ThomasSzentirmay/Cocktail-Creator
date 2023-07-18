@@ -24,4 +24,8 @@ Favorite.init(
   }
 );
 
+Favorite.belongsTo(User, {
+    foreignKey: 'userId'
+  });
+
 module.exports = Favorite;

@@ -41,5 +41,8 @@ User.prototype.validatePass = async function(formPassword) {
 
 User.hasMany(Drink);
 Drink.belongsTo(User);
+User.hasMany(Favorite, {
+  foreignKey: 'userId'
+});
 
 module.exports = User;

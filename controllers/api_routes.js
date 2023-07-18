@@ -2,6 +2,9 @@ const express = require('express');
 const app = express();
 const request = require('request');
 require('dotenv').config();
+const User = require('../path-to-User-model');
+const Favorite = require('../path-to-Favorite-model');
+
 
 // get cocktails from NAME
 app.get("/api/name/:Name", (req, res) => {
@@ -12,7 +15,7 @@ app.get("/api/name/:Name", (req, res) => {
     headers: {
       'X-Api-Key': process.env.API_KEY
     },
-  }, function(error, response, body) {
+  }, function (error, response, body) {
     if (error) {
       console.error('Request failed:', error);
       res.status(500).send('Request failed');
@@ -28,6 +31,24 @@ app.get("/api/name/:Name", (req, res) => {
       res.json({ data: cocktails });
     }
   });
+});
+
+// Add a favorite cocktail
+app.post('/api/favorites', (req, res) => {
+  const { cocktailId } = req.body;
+  const userId = 1; 
+
+  Favorite.create({
+    cocktailName: '', 
+    userId: userId
+  })
+    .then(favorite => {
+      res.json(favorite);
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      res.status(500).send('Error');
+    });
 });
 
 module.exports = app;
