@@ -13,7 +13,7 @@ Favorite.init(
       type: DataTypes.STRING,
       allowNull: false
     },
-    recipe: {
+    instructions: {
       type: DataTypes.STRING,
       allowNull: false
     },
