@@ -17,11 +17,11 @@
 
 
 <ul>
-    {{#each cocktails}}
+    {{#each favorites}}
     <li>
-        <p>{{text}}</p>
+        <p>{{this.cocktailName}}</p>
         <p>Added By: {{user.userName}}</p>
-        <img src={{image}} alt="Picture of users cocktail">
+        <img src={{this.image_url}} alt="Picture of users cocktail">
     </li>
     {{/each}}
 </ul>
