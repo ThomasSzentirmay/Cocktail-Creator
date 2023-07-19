@@ -228,12 +228,13 @@
 
   .collapsible-body {
     padding: 10px;
+    background-color: #8d5f33;
   }
   
   .collapsible-body p {
     margin-bottom: 10px;
     line-height: 1.6;
-    color: #ffffff; /* Set the text color */
+    color: #ffffff;
   }
   
   .collapsible-body h3 {
@@ -251,6 +252,7 @@
   /* Trnsform the p elements in dashboard */
   .cap {
     text-transform: uppercase; 
+    font-weight: bold;
   }
   
 
