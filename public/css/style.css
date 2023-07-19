@@ -8,8 +8,8 @@
   padding: 0;
 }
 
-/* Body styles for the home page */
-body.home {
+/* Main styles for the home page */
+main.home {
   background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
     url("../images/cocktail-pour-unsplash.jpg");
   background-size: cover;
@@ -17,15 +17,16 @@ body.home {
   background-position: center;
 }
 
+main {
+  flex: 1 0 auto;
+}
+
+/* Body stuff */
 body {
   background-color: #f6ae2d;
   display: flex;
   min-height: 100vh;
   flex-direction: column;
-}
-
-main {
-  flex: 1 0 auto;
 }
 
 /* Responsive styles for images */
