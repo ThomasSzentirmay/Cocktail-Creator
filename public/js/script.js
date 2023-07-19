@@ -75,3 +75,8 @@ function favoriteCocktail(cocktail) {
 
 // Materialize
 $('.collapsible').collapsible();
+
+document.addEventListener('DOMContentLoaded', function () {
+    var elems = document.querySelectorAll('.sidenav');
+    var instances = M.Sidenav.init(elems, { edge: 'right' }); // Add { edge: 'right' } to make it slide from the right
+  });

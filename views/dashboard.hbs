@@ -15,7 +15,7 @@
     {{#if favorites}}
       <ul class="collapsible">
         {{#each favorites}}
-          <li>
+          <li class='center-align'>
             <p class="collapsible-header">{{this.cocktailName}}</p>
             <div class="collapsible-body">
               <p>Ingredients:</p>
@@ -29,7 +29,7 @@
               {{/if}}
               <p>Favorited on: {{this.createdAt}}</p>
               <button data-id="{{this.id}}" class="cloudinary-button upload-widget">Upload files</button>
-              <button data-id="{{this.id}}" class="remove-button remove-widget" onclick="removeFavorite('{{this.id}}', this)">Remove Favorite</button>
+              <button data-id="{{this.id}}" class="cloudinary-button remove-button remove-widget" onclick="removeFavorite('{{this.id}}', this)">Remove</button>
             </div>
           </li>
         {{/each}}
