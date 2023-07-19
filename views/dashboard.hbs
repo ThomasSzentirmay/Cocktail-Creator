@@ -18,18 +18,18 @@
           <li class='center-align'>
             <p class="collapsible-header">{{this.cocktailName}}</p>
             <div class="collapsible-body">
-              <p>Ingredients:</p>
+              <p class="cap">Ingredients:</p>
               <p>{{this.ingredients}}</p>
               <hr>
-              <p>Instructions:</p>
+              <p class="cap">Instructions:</p>
               <p>{{this.instructions}}</p>
               <hr>
               {{#if this.image_url}}
                 <img src="{{this.image_url}}" class="favorite-image" alt="Uploaded image">
               {{/if}}
-              <p>Favorited on: {{this.createdAt}}</p>
-              <button data-id="{{this.id}}" class="cloudinary-button upload-widget">Upload files</button>
-              <button data-id="{{this.id}}" class="cloudinary-button remove-button remove-widget" onclick="removeFavorite('{{this.id}}', this)">Remove</button>
+              <p class="cap">Favorited on: {{this.createdAt}}</p>
+              <button data-id="{{this.id}}" class="btn-large upload-widget">Upload files</button>
+              <button data-id="{{this.id}}" class="btn-large remove-button remove-widget" onclick="removeFavorite('{{this.id}}', this)">Remove</button>
             </div>
           </li>
         {{/each}}
