@@ -171,7 +171,7 @@ textarea.materialize-textarea:focus:not([readonly]) {
   background: linear-gradient(to top, #2b1d1a, #b9988d);
 }
 
-.sidenav-trigger img {
+/* .sidenav-trigger img {
   width: 75px;
   height: 58px; 
-}
+} */
