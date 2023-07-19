@@ -63,12 +63,12 @@
   
   /* Large button styles */
   .btn-large {
-    background-color: #1565C0;
+    background-color: #4e342e;
   }
   
   .btn-large:hover {
-    background-color: #bbd5f1;
-    color: #1565C0;
+    background-color: #a1928e;
+    color: #4e342e;
   }
   
   /* Centering styles */
@@ -190,15 +190,16 @@
   
   /* Custom styles for collapsible-header */
   .collapsible-header {
-    background-color: #4e342e; /* Set the background color */
-    color: #fff; /* Set the text color */
-    font-size: 18px; /* Set the font size */
-    padding: 15px; /* Add padding to the header */
-    cursor: pointer; /* Change the cursor to indicate it's clickable */
-    text-align: center; /* Center the text horizontally */
-    display: flex; /* Use flexbox */
-    align-items: center; /* Vertically center the text */
-    justify-content: center; /* Horizontally center the text */
+    background-color: #4e342e; 
+    color: #fff; 
+    font-size: 22px; 
+    padding: 15px; 
+    cursor: pointer; 
+    text-align: center; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    text-transform: uppercase;
   }
   
   /* Hover effect for collapsible-header */
@@ -212,10 +213,37 @@
   }
   
   .collapsible {
-    border-top: none;
-    border-right: none;
-    border-left: none;
+    border: none;
+    border-bottom: none;
   }
+
+  .collapsible-body {
+    padding: 10px;
+  }
+  
+  .collapsible-body p {
+    margin-bottom: 10px;
+    line-height: 1.6;
+    color: #ffffff; /* Set the text color */
+  }
+  
+  .collapsible-body h3 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #4e342e; /* Set the heading color */
+  }
+  
+  .collapsible-body hr {
+    margin: 20px 0;
+    border: none;
+  }
+
+  /* Trnsform the p elements in dashboard */
+  .cap {
+    text-transform: uppercase; 
+  }
+  
 
   /* NAV AND DROPDOWN NAV */
 .nav-wrapper.brown.darken-3 {
