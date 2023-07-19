@@ -72,7 +72,7 @@ var myWidget = cloudinary.createUploadWidget({
 
 document.addEventListener('click', e => {
   const el = e.target;
-  if (el.classList.contains('upload-widget')) {
+  if (el.classList.contains('cloudinary-button')) {
     favorite_id = el.dataset.id;
     myWidget.open();
   }
@@ -87,7 +87,7 @@ document.addEventListener('click', e => {
   // Event handler function
   async function removeFavorite(favoriteId, button) {
     try {
-      // Make AJAX request to remove the item from the database
+      // Make request to remove the item from the database
       const response = await fetch(`/api/favorites/${favoriteId}`, {
         method: 'DELETE',
         headers: {
