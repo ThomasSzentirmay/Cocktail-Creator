@@ -15,17 +15,19 @@
 
 <div class="gallery-container">
     {{#each favorites}}
-    <div class="gallery-card-wrapper">
-        <div class="gallery-card">
-            <div class="gallery-card-image">
-                <img src={{this.image_url}} class="favorite-image" alt="Picture of a user's cocktail">
+        {{#if this.image_url}}
+            <div class="gallery-card-wrapper">
+                <div class="gallery-card">
+                    <div class="gallery-card-image">
+                        <img src={{this.image_url}} class="favorite-image" alt="Picture of a user's cocktail">
+                    </div>
+                    <span class="card-title">{{this.cocktailName}}</span>
+                    <div class="card-content">
+                        <p>Added by: {{user.userName}}</p>
+                    </div>
+                </div>
             </div>
-            <span class="card-title">{{this.cocktailName}}</span>
-            <div class="card-content">
-                <p>Added by: {{user.userName}}</p>
-            </div>
-        </div>
-    </div>
+        {{/if}}
     {{/each}}
   </div>
 
