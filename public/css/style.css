@@ -380,3 +380,8 @@ textarea.materialize-textarea:focus:not([readonly]) {
 .card-content .verification-buttons {
   margin-top: 20px;
 }
+
+.search-input-box {
+  text-align: center;
+  margin: 0 auto;
+}

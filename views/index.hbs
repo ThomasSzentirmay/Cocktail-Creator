@@ -5,7 +5,7 @@
             right at home.</p>
         <div class="contain">
             <form id="form" action="/drink" method="POST">
-                <input type="text" id="name-search" placeholder="Enter a cocktail name" style="color: white;">
+                <input class="search-input-box" type="text" id="name-search" placeholder="Enter a cocktail name" style="color: white;">
                 <div id="name-suggestions"></div>
             </form>
         </div>
@@ -30,17 +30,3 @@
         {{/if}}
     {{/each}}
   </div>
-
-
-
-
-{{!-- <ul>
-<ul class="homepage-list">
-    {{#each favorites}}
-    <li>
-        <p>{{this.cocktailName}}</p>
-        <p>Added By: {{user.userName}}</p>
-        <img src={{this.image_url}} class="favorite-image" alt="Picture of users cocktail">
-    </li>
-    {{/each}}
-</ul> --}}
