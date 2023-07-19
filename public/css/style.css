@@ -1,165 +1,218 @@
+/* Default styles for elements */
 * {
     font-family: "Arial", sans-serif;
     font-size: 16px;
     font-weight: normal;
     font-style: normal;
   }
-
+  
+  /* Body styles for the home page */
   body.home {
     background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../images/cocktail-pour-unsplash.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
   }
-
+  body{
+    background-color: #f6ae2d;
+  }
+  
+  /* Responsive styles for images */
   img {
     max-width: 100%;
   }
-
+  
+  /* Heading styles */
   h1 {
     font-size: 50px;
     font-weight: bold;
     text-transform: uppercase;
   }
-
+  
   h3 {
     font-size: 30px;
-    font-weight:bolder;
+    font-weight: bolder;
   }
-
-html {
-  height: 100%
-}
-
-.age21 {
-    margin-top: 15%;
-}
-
-.brand-logo {
-  position: fixed;
-  left: 5rem;
-}
-
-/* #hero-image {
   
-  position: fixed; */
-  /* top: 62px;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  object-fit: cover;
-  background-repeat: no-repeat;
-}
-
-/* Responsive styles for smaller screens */
-@media (max-width: 768px) {
-    #hero-image {
-      /* Adjust the top position for smaller screens */
-      top: 40px;
-    }
+  /* HTML element styles */
+  html {
+    height: 100%;
   }
-
-.hero-content {
-  color: white;
-   
-}
-
-.space {
+  
+  .age21 {
+    margin-top: 15%;
+  }
+  
+  /* Brand logo styles */
+  .brand-logo {
+    position: fixed;
+    left: 5rem;
+  }
+  
+  /* Hero content styles */
+  .hero-content {
+    color: white;
+  }
+  
+  /* Styles for spacing */
+  .space {
     margin-right: 10px;
     margin-top: 10px;
-}
-
-.btn-large {
+  }
+  
+  /* Large button styles */
+  .btn-large {
     background-color: #1565C0;
-}
-
-.btn-large:hover {
+  }
+  
+  .btn-large:hover {
     background-color: #bbd5f1;
     color: #1565C0;
-}
-
-.text-center1 {
+  }
+  
+  /* Centering styles */
+  .text-center1 {
     text-align: center;
-}
-
-#show-password {
+  }
+  
+  #show-password {
     margin-top: 8px;
-}
-
-#action-button {
+  }
+  
+  #action-button {
     margin-top: 10px;
-}
-
-.mt{
+  }
+  
+  .mt {
     margin-top: 8rem;
-}
-
-.contain {
+  }
+  
+  .contain {
     padding: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-#form {
+  }
+  
+  #form {
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-/* Overwrite materialize styles */
-
-[type="checkbox"].filled-in:checked+span:not(.lever):after {
+  }
+  
+  /* Overwrite materialize styles for checkboxes and links */
+  [type="checkbox"].filled-in:checked+span:not(.lever):after {
     border: 2px solid #1565C0;
     background-color: #1565C0;
-}
-
-.card .card-action a:not(.btn):not(.btn-large):not(.btn-small):not(.btn-large):not(.btn-floating) {
+  }
+  
+  .card .card-action a:not(.btn):not(.btn-large):not(.btn-small):not(.btn-large):not(.btn-floating) {
     color: #1565C0;
-}
-
-.card .card-action a:not(.btn):not(.btn-large):not(.btn-small):not(.btn-large):not(.btn-floating):hover {
+  }
+  
+  .card .card-action a:not(.btn):not(.btn-large):not(.btn-small):not(.btn-large):not(.btn-floating):hover {
     color: #c6dcf5; /* Change to the desired color when hovering over the links */
   }
-
-.teal.lighten-2 {
-    background-color: #1565C0!important;
-}
-
-/* Overwrite materialize styles - inputs */
-input:not([type]):focus:not([readonly]),
-input[type="text"]:not(.browser-default):focus:not([readonly]), input[type="password"]:not(.browser-default):focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]) {
+  
+  .teal.lighten-2 {
+    background-color: #4e342e !important;
+  }
+  
+  /* Overwrite materialize styles - inputs */
+  input:not([type]):focus:not([readonly]),
+  input[type="text"]:not(.browser-default):focus:not([readonly]),
+  input[type="password"]:not(.browser-default):focus:not([readonly]),
+  textarea.materialize-textarea:focus:not([readonly]) {
     border-bottom: none;
     -webkit-box-shadow: none;
     box-shadow: none;
-};
-
-
-  /* Add media queries for responsive design */
+  }
   
-  /* Sorry.hbs */
-
-  /* On small screens (max-width: 600px), center the card without offset */
-  @media only screen and (max-width: 600px) {
+  /* Media queries for responsive design */
+  
+  /* Small screens (max-width: 500px) */
+  @media only screen and (max-width: 500px) {
     .col.s12.m6.offset-m3 {
+      /* On small screens, center the card with a smaller left offset */
       margin: 0 auto;
       margin-left: 15px;
-      max-width: 600px;
+      max-width: 455px;
     }
   }
   
-  /* On medium screens (min-width: 601px) and (max-width: 992px), center the card with a smaller offset */
-  @media only screen and (min-width: 601px) and (max-width: 992px) {
+  /* Medium screens (min-width: 501px) and (max-width: 992px) */
+  @media only screen and (min-width: 501px) and (max-width: 992px) {
     .col.s12.m6.offset-m3 {
+      /* On medium screens, center the card with a smaller left offset */
       margin: 0 auto;
       margin-left: 15px;
-      }
-      
-      .container {
+    }
+  
+    /* Reset the container width to allow centering on medium screens */
+    .container {
       width: 100%;
       padding: 0 20px;
       max-width: none;
     }
   }
-    
+  
+  /* Extra small screens (max-width: 500px) */
+  @media (max-width: 500px) {
+    #hero-image {
+      /* Adjust the top position for smaller screens */
+      top: 40px;
+    }
+  
+    .hero-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: white;
+    }
+  
+    .hero-content h1 {
+      font-size: 3rem;
+    }
+  
+    .hero-content p {
+      font-size: 1.5rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+  
+    .contain {
+      margin-top: 30px;
+    }
+  }
+  
+  /* Custom styles for collapsible-header */
+  .collapsible-header {
+    background-color: #4e342e; /* Set the background color */
+    color: #fff; /* Set the text color */
+    font-size: 18px; /* Set the font size */
+    padding: 15px; /* Add padding to the header */
+    cursor: pointer; /* Change the cursor to indicate it's clickable */
+    text-align: center; /* Center the text horizontally */
+    display: flex; /* Use flexbox */
+    align-items: center; /* Vertically center the text */
+    justify-content: center; /* Horizontally center the text */
+  }
+  
+  /* Hover effect for collapsible-header */
+  .collapsible-header:hover {
+    background-color: #6d4c41; /* Change the background color on hover */
+  }
+  
+  /* Active state for collapsible-header */
+  .collapsible-header.active {
+    background-color: #795548; /* Change the background color for the active header */
+  }
+  
+  .collapsible {
+    border-top: none;
+    border-right: none;
+    border-left: none;
+  }
   
