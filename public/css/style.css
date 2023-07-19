@@ -7,21 +7,22 @@
   margin: 0;
   padding: 0;
 }
-  
-  /* Body styles for the home page */
-  body.home {
+
+/* Body styles for the home page */
+body.home {
   background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
     url("../images/cocktail-pour-unsplash.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
 }
-  body{
-    background-color: #f6ae2d;
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
-  }
+
+body {
+  background-color: #f6ae2d;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
 
   main {
     flex: 1 0 auto;
@@ -227,37 +228,36 @@
     border-bottom: none;
   }
 
-  .collapsible-body {
-    padding: 10px;
-    background-color: #8d5f33;
-  }
-  
-  .collapsible-body p {
-    margin-bottom: 10px;
-    line-height: 1.6;
-    color: #ffffff;
-  }
-  
-  .collapsible-body h3 {
-    font-size: 1.8rem;
-    font-weight: bold;
-    margin-bottom: 15px;
-    color: #4e342e; /* Set the heading color */
-  }
-  
-  .collapsible-body hr {
-    margin: 20px 0;
-    border: none;
-  }
+.collapsible-body {
+  padding: 10px;
+  background-color: #8d5f33;
+}
 
-  /* Trnsform the p elements in dashboard */
-  .cap {
-    text-transform: uppercase; 
-    font-weight: bold;
-  }
-  
+.collapsible-body p {
+  margin-bottom: 10px;
+  line-height: 1.6;
+  color: #ffffff;
+}
 
-  /* NAV AND DROPDOWN NAV */
+.collapsible-body h3 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #4e342e; /* Set the heading color */
+}
+
+.collapsible-body hr {
+  margin: 20px 0;
+  border: none;
+}
+
+/* Trnsform the p elements in dashboard */
+.cap {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+/* NAV AND DROPDOWN NAV */
 .nav-wrapper.brown.darken-3 {
   background: linear-gradient(to top, #2b1d1a, #a0837a);
 }
@@ -266,7 +266,6 @@
   width: 180px;
   background: linear-gradient(to top, #2b1d1a, #b9988d);
 }
-
 
 /* FOOTER */
 .page-footer {
