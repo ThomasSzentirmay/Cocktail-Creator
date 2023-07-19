@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    var name = 'martini';
+    var name = 'vodka';
 
     $.ajax({
         method: 'GET',
