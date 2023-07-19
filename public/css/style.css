@@ -1,6 +1,6 @@
 /* Default styles for elements */
 * {
-  font-family: "Arial", sans-serif;
+  font-family: 'Cinzel', serif;
   font-size: 16px;
   font-weight: normal;
   font-style: normal;
@@ -37,6 +37,7 @@
     font-size: 50px;
     font-weight: bold;
     text-transform: uppercase;
+    color: #fff;
   }
   
   h3 {
@@ -61,7 +62,7 @@
   
   /* Hero content styles */
   .hero-content {
-    color: white;
+    color: #ffffff;
   }
   
   /* Styles for spacing */
