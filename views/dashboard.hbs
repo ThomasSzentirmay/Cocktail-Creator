@@ -87,7 +87,7 @@ document.addEventListener('click', e => {
   // Event handler function
   async function removeFavorite(favoriteId, button) {
     try {
-      // Make AJAX request to remove the item from the database
+      // Make request to remove the item from the database
       const response = await fetch(`/api/favorites/${favoriteId}`, {
         method: 'DELETE',
         headers: {

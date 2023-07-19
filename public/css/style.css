@@ -231,3 +231,8 @@
   width: 75px;
   height: 58px; 
 } */
+
+.favorite-image {
+  width: 400px;
+  height: auto;
+}
