@@ -29,7 +29,7 @@
                 <img src="{{this.image_url}}" class="favorite-image" alt="Uploaded image">
               {{/if}}
               <p class="cap">Favorited on: {{this.createdAt}}</p>
-              <button data-id="{{this.id}}" class="btn-large upload-widget">Upload files</button>
+              <button data-id="{{this.id}}" class="btn-large cloudinary-button upload-widget">Upload files</button>
               <button data-id="{{this.id}}" class="btn-large remove-button remove-widget" onclick="removeFavorite('{{this.id}}', this)">Remove</button>
             </div>
           </li>
