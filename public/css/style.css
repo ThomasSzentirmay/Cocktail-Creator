@@ -162,8 +162,8 @@ textarea.materialize-textarea:focus:not([readonly]) {
 
 
 /* NAV AND DROPDOWN NAV */
-.nav {
-  background: linear-gradient(to top, #2b1d1a, #b9988d);
+.nav-wrapper.brown.darken-3 {
+  background: linear-gradient(to top, #2b1d1a, #a0837a);
 }
 
 .sidenav {
