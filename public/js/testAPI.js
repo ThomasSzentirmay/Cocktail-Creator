@@ -9,9 +9,9 @@ $(document).ready(function() {
         },
         contentType: 'application/json',
         success: function(result) {
-            console.log(result);
+            // console.log(result);
             var instructions = result[0].instructions;
-            console.log('Instructions:', instructions);
+            // console.log('Instructions:', instructions);
         },
         error: function(jqXHR) {
             console.error('Error: ', jqXHR.responseText);

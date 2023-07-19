@@ -8,18 +8,29 @@ function isAuthenticated(req, res, next) {
   if (!isAuthenticated) return res.redirect('/login');
   next();
 }
+
 // Show Homepage
 router.get('/', async (req, res) => {
-  // let cocktails = await Cocktail.findAll({
-  //   include: User
-  // });
+  try {
+    const favorites = await Favorite.findAll({
+      include: [User],
+      order: [['createdAt', 'DESC']]
+    });
+  
+    const plainFav = favorites.map(favorite => favorite.get({ plain: true }));
+  
+    res.render('index', {
+      isHome: true,
+      isLoggedIn: req.session.user_id,
+      ageVerified: req.session.ageVerified,
+      favorites: plainFav
+    });
 
-  res.render('index', {
-    isHome: true,
-    isLoggedIn: req.session.user_id,
-    ageVerified: req.session.ageVerified
-    // cocktails: cocktails
-  });
+    console.log(plainFav);
+  } catch (err) {
+    console.error(err);
+    res.redirect('/');
+  }
 });
 
 // Verify Age

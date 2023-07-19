@@ -5,6 +5,17 @@
     font-style: normal;
   }
 
+  body.home {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../images/cocktail-pour-unsplash.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
   h1 {
     font-size: 50px;
     font-weight: bold;
@@ -29,10 +40,10 @@ html {
   left: 5rem;
 }
 
-#hero-image {
-  background-image: url("../images/cocktail-pour-unsplash.jpg");
-  position: fixed;
-  top: 62px;
+/* #hero-image {
+  
+  position: fixed; */
+  /* top: 62px;
   left: 0;
   width: 100vw;
   height: 100vh;
