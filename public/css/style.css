@@ -42,6 +42,10 @@ h1 {
   color: #fff;
 }
 
+.about-section-title {
+  margin-top: 40px;
+}
+
 .community-title {
   color: #fff;
   text-align: center;
@@ -427,4 +431,27 @@ textarea.materialize-textarea:focus:not([readonly]) {
 .footer-copyright {
   padding: 0;
   margin: 0;
+}
+
+.about-container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-wrapper {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-card {
+  height: 100vh;
+}
+
+.card.large {
+  height: 100%;
 }
