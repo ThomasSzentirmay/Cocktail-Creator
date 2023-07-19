@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="/css/style.css">
 </head>
 
-<body  class="center-align">
+<body class="center-align">
     <h1 class="center-align">My Cocktails</h1>
 
     {{#if favorites}}
@@ -29,8 +29,8 @@
                 <img src="{{this.image_url}}" class="favorite-image" alt="Uploaded image">
               {{/if}}
               <p class="cap">Favorited on: {{this.createdAt}}</p>
-              <button data-id="{{this.id}}" class="btn-large upload-widget">Upload files</button>
-              <button data-id="{{this.id}}" class="btn-large remove-button remove-widget" onclick="removeFavorite('{{this.id}}', this)">Remove</button>
+              <button data-id="{{this.id}}" class="btn-large cloudinary-button upload-widget gray-button">Upload files</button>
+              <button data-id="{{this.id}}" class="btn-large remove-button remove-widget red-button" onclick="removeFavorite('{{this.id}}', this)">Remove</button>
             </div>
           </li>
         {{/each}}
