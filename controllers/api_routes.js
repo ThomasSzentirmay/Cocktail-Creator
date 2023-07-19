@@ -23,7 +23,9 @@ router.get("/api/name/:Name", (req, res) => {
     } else {
       const data = JSON.parse(body);
       const cocktails = data.map(cocktail => ({
-        name: cocktail.name
+        name: cocktail.name,
+        ingredients: cocktail.ingredients,
+        instructions: cocktail.instructions
       }));
 
       res.json({ data: cocktails });
@@ -34,9 +36,9 @@ router.get("/api/name/:Name", (req, res) => {
 // Add a favorite cocktail
 router.put('/api/favorites/:id', (req, res) => {
   console.log(req.body)
-  const { cocktailName } = req.body;
+  const { cocktailName, cocktailIng, cocktailInst } = req.body;
   const userId = req.session.user_id; 
-  console.log(cocktailName, userId)
+  console.log(cocktailName, cocktailIng, cocktailInst)
 
       Favorite.update({
         image_url: req.body.image_url
@@ -60,10 +62,12 @@ router.put('/api/favorites/:id', (req, res) => {
 router.post('/api/favorites', (req, res) => {
   const userId = req.session.user_id;
 
-  const { cocktailName, cocktailImage } = req.body;
+  const { cocktailName, cocktailImage, cocktailIng, cocktailInst } = req.body;
 
   Favorite.create({
     cocktailName: cocktailName,
+    ingredients: cocktailIng,
+    instructions: cocktailInst,
     userId: userId,
     cocktailImage: cocktailImage
   })

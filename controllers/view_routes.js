@@ -71,7 +71,7 @@ router.get('/dashboard', isAuthenticated, async (req, res) => {
       favorites: serFav,
     });
   } catch (error) {
-    console.error(error);
+    console.error('dashboard error', error);
     res.status(500).send('Internal Server Error');
   }
 });

@@ -16,17 +16,17 @@ const nameSuggestions = document.getElementById('name-suggestions');
 if (nameSearchInput) {
     nameSearchInput.addEventListener('input', function () {
         const searchTerm = nameSearchInput.value;
-    
+
         if (searchTerm.length >= 3) {
             fetch(`/api/name/${searchTerm}`)
                 .then(response => response.json())
                 .then(data => {
                     nameSuggestions.innerHTML = '';
-    
+
                     if (data.data) {
                         const suggestions = data.data;
 
-    
+
                         suggestions.forEach(suggestion => {
                             const suggestionButton = document.createElement('button');
                             suggestionButton.textContent = suggestion.name;
@@ -38,7 +38,8 @@ if (nameSearchInput) {
                                 event.preventDefault()
                                 console.log(isLoggedIn)
                                 if (isLoggedIn) {
-                                    favoriteCocktail(suggestion.name);
+                                    console.log(suggestion);
+                                    favoriteCocktail(suggestion);
                                 }
                             });
                         });
@@ -51,19 +52,26 @@ if (nameSearchInput) {
     });
 }
 
-function favoriteCocktail(cocktailName) {
+function favoriteCocktail(cocktail) {
 
-    console.log(`Favorite cocktail with ID ${cocktailName}`);
     fetch('/api/favorites', {
         method: "POST",
-        body: JSON.stringify({ cocktailName: cocktailName }),
+        body: JSON.stringify({
+            cocktailName: cocktail.name,
+            cocktailIng: cocktail.ingredients.join(', '),
+            cocktailInst: cocktail.instructions
+        }),
         headers: { 'Content-Type': 'application/json' }
-    }).then(res => res.json())
-        .then(data => {
-            window.location = '/dashboard';
-        })
-
+    })
+    .then(res => res.json())
+    .then(data => {
+        window.location = '/dashboard';
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
 }
+
 
 // Materialize
 $('.collapsible').collapsible();
