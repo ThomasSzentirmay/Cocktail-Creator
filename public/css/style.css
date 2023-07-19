@@ -385,3 +385,14 @@ textarea.materialize-textarea:focus:not([readonly]) {
   text-align: center;
   margin: 0 auto;
 }
+
+.error-message {
+  color: #fff;
+  padding: 20px 10px;
+  background-color: #746c6c;
+  border-radius: 5px;
+  width: 40%;
+  margin: 0 auto;
+  position: relative;
+  top: 30px;
+}
