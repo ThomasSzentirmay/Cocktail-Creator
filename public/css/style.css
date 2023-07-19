@@ -1,18 +1,19 @@
 /* Default styles for elements */
 * {
     font-family: "Arial", sans-serif;
-    font-size: 16px;
-    font-weight: normal;
-    font-style: normal;
-  }
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+}
   
   /* Body styles for the home page */
   body.home {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../images/cocktail-pour-unsplash.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-  }
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url("../images/cocktail-pour-unsplash.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
   body{
     background-color: #f6ae2d;
   }
@@ -215,4 +216,13 @@
     border-right: none;
     border-left: none;
   }
-  
+
+  /* NAV AND DROPDOWN NAV */
+.nav-wrapper.brown.darken-3 {
+  background: linear-gradient(to top, #2b1d1a, #a0837a);
+}
+
+.sidenav {
+  width: 180px;
+  background: linear-gradient(to top, #2b1d1a, #b9988d);
+}
