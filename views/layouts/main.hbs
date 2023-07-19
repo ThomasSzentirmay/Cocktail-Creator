@@ -12,25 +12,39 @@
 <body class="{{#if isHome}}home{{/if}}">
   {{#if ageVerified}}
   <header>
+    {{!-- NAV BAR --}}
     <nav class="nav-wrapper #4e342e brown darken-3">
       <div class="container">
         <a href="/" class="brand-logo">MixMate</a>
-        {{!-- <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a> --}}
         <ul class="right hide-on-med-and-down">
           {{#unless isHome}}
           <li> <a href="/">Home</a></li>
           {{/unless}}
           {{#if isLoggedIn}}
           <li><a href="/dashboard">Dashboard</a></li>
-          {{!-- <p>Welcome, {{userName}}</p> --}}
           <li><a href="/logout">Log Out</a></li>
           {{else}}
           <li><a href="/login" class="{{#if isLogin}}active{{/if}}">Login</a></li>
           <li><a href="/register" class="{{#if isRegister}}active{{/if}}">Register</a></li>
           {{/if}}
         </ul>
+        <a href="#" data-target="nav-mobile" class="sidenav-trigger right"><i class="material-icons">menu</i></a>
       </div>
     </nav>
+
+    {{!-- DROPDOWN --}}
+    <ul class="sidenav" id="nav-mobile">
+      {{#unless isHome}}
+      <li> <a href="/">Home</a></li>
+      {{/unless}}
+      {{#if isLoggedIn}}
+      <li><a href="/dashboard">Dashboard</a></li>
+      <li><a href="/logout">Log Out</a></li>
+      {{else}}
+      <li><a href="/login" class="{{#if isLogin}}active{{/if}}">Login</a></li>
+      <li><a href="/register" class="{{#if isRegister}}active{{/if}}">Register</a></li>
+      {{/if}}
+    </ul>
   </header>
   <main>
     {{{body}}}
