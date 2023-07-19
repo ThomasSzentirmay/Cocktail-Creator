@@ -23,7 +23,7 @@ main {
 
 /* Body stuff */
 body {
-  background-color: #f6ae2d;
+  background: linear-gradient(to top, #e0b677, #4b3609);
   display: flex;
   min-height: 100vh;
   flex-direction: column;
@@ -40,6 +40,22 @@ h1 {
   font-weight: bold;
   text-transform: uppercase;
   color: #fff;
+}
+
+.verify-title {
+  text-align: center;
+  position: relative;
+  top: 110px;
+}
+
+.verify-info-link {
+  text-align: center;
+  position: relative;
+  top: 120px;
+}
+
+.verify-info-link:hover {
+  text-decoration: underline;
 }
 
 h3 {
