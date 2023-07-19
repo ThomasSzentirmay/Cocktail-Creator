@@ -1,9 +1,11 @@
 /* Default styles for elements */
 * {
-    font-family: "Arial", sans-serif;
+  font-family: "Arial", sans-serif;
   font-size: 16px;
   font-weight: normal;
   font-style: normal;
+  margin: 0;
+  padding: 0;
 }
   
   /* Body styles for the home page */
@@ -16,6 +18,13 @@
 }
   body{
     background-color: #f6ae2d;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1 0 auto;
   }
   
   /* Responsive styles for images */
@@ -255,6 +264,19 @@
   background: linear-gradient(to top, #2b1d1a, #b9988d);
 }
 
+
+/* FOOTER */
+.page-footer {
+  background: linear-gradient(to top, #2b1d1a, #a0837a);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  /* position: absolute;
+  bottom: 0; */
+  width: 100%;
+  height: 5%;
+}
+
 /* .sidenav-trigger img {
   width: 75px;
   height: 58px; 
@@ -264,3 +286,4 @@
   width: 400px;
   height: auto;
 }
+
