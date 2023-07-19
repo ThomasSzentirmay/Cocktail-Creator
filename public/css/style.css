@@ -7,9 +7,9 @@
   margin: 0;
   padding: 0;
 }
-  
-  /* Body styles for the home page */
-  body.home {
+
+/* Body styles for the home page */
+body.home {
   background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
     url("../images/cocktail-pour-unsplash.jpg");
   background-size: cover;
@@ -17,254 +17,251 @@
   background-position: center;
 }
 
-/* Styling for logo */
-body.logo-style{
+body {
+  background-color: #f6ae2d;
   display: flex;
-width: 20px;
-height: 20px;
+  min-height: 100vh;
+  flex-direction: column;
 }
 
-  body{
-    background-color: #f6ae2d;
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
+main {
+  flex: 1 0 auto;
+}
+
+/* Responsive styles for images */
+img {
+  max-width: 100%;
+}
+
+/* Heading styles */
+h1 {
+  font-size: 50px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+h3 {
+  font-size: 30px;
+  font-weight: bolder;
+}
+
+/* HTML element styles */
+html {
+  height: 100%;
+}
+
+.age21 {
+  margin-top: 15%;
+}
+
+/* Brand logo styles */
+.brand-logo {
+  position: fixed;
+  left: 5rem;
+}
+
+/* Hero content styles */
+.hero-content {
+  color: white;
+}
+
+/* Styles for spacing */
+.space {
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+/* Large button styles */
+.btn-large {
+  background-color: #4e342e;
+}
+
+.btn-large:hover {
+  background-color: #a1928e;
+  color: #4e342e;
+}
+
+/* Centering styles */
+.text-center1 {
+  text-align: center;
+}
+
+#show-password {
+  margin-top: 8px;
+}
+
+#action-button {
+  margin-top: 10px;
+}
+
+.mt {
+  margin-top: 8rem;
+}
+
+.contain {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Overwrite materialize styles for checkboxes and links */
+[type="checkbox"].filled-in:checked+span:not(.lever):after {
+  border: 2px solid #1565C0;
+  background-color: #1565C0;
+}
+
+.card .card-action a:not(.btn):not(.btn-large):not(.btn-small):not(.btn-large):not(.btn-floating) {
+  color: #1565C0;
+}
+
+.card .card-action a:not(.btn):not(.btn-large):not(.btn-small):not(.btn-large):not(.btn-floating):hover {
+  color: #c6dcf5;
+  /* Change to the desired color when hovering over the links */
+}
+
+.teal.lighten-2 {
+  background-color: #4e342e !important;
+}
+
+/* Overwrite materialize styles - inputs */
+input:not([type]):focus:not([readonly]),
+input[type="text"]:not(.browser-default):focus:not([readonly]),
+input[type="password"]:not(.browser-default):focus:not([readonly]),
+textarea.materialize-textarea:focus:not([readonly]) {
+  border-bottom: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+/* Media queries for responsive design */
+
+/* Small screens (max-width: 500px) */
+@media only screen and (max-width: 500px) {
+  .col.s12.m6.offset-m3 {
+    /* On small screens, center the card with a smaller left offset */
+    margin: 0 auto;
+    margin-left: 15px;
+    max-width: 455px;
+  }
+}
+
+/* Medium screens (min-width: 501px) and (max-width: 992px) */
+@media only screen and (min-width: 501px) and (max-width: 992px) {
+  .col.s12.m6.offset-m3 {
+    /* On medium screens, center the card with a smaller left offset */
+    margin: 0 auto;
+    margin-left: 15px;
   }
 
-  main {
-    flex: 1 0 auto;
+  /* Reset the container width to allow centering on medium screens */
+  .container {
+    width: 100%;
+    padding: 0 20px;
+    max-width: none;
   }
-  
-  /* Responsive styles for images */
-  img {
-    max-width: 100%;
+}
+
+/* Extra small screens (max-width: 500px) */
+@media (max-width: 500px) {
+  #hero-image {
+    /* Adjust the top position for smaller screens */
+    top: 40px;
   }
-  
-  /* Heading styles */
-  h1 {
-    font-size: 50px;
-    font-weight: bold;
-    text-transform: uppercase;
-  }
-  
-  h3 {
-    font-size: 30px;
-    font-weight: bolder;
-  }
-  
-  /* HTML element styles */
-  html {
-    height: 100%;
-  }
-  
-  .age21 {
-    margin-top: 15%;
-  }
-  
-  /* Brand logo styles */
-  .brand-logo {
-    position: fixed;
-    left: 5rem;
-  }
-  
-  /* Hero content styles */
+
   .hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
     color: white;
   }
-  
-  /* Styles for spacing */
-  .space {
-    margin-right: 10px;
-    margin-top: 10px;
+
+  .hero-content h1 {
+    font-size: 3rem;
   }
-  
-  /* Large button styles */
-  .btn-large {
-    background-color: #4e342e;
+
+  .hero-content p {
+    font-size: 1.5rem;
+    max-width: 600px;
+    margin: 0 auto;
   }
-  
-  .btn-large:hover {
-    background-color: #a1928e;
-    color: #4e342e;
-  }
-  
-  /* Centering styles */
-  .text-center1 {
-    text-align: center;
-  }
-  
-  #show-password {
-    margin-top: 8px;
-  }
-  
-  #action-button {
-    margin-top: 10px;
-  }
-  
-  .mt {
-    margin-top: 8rem;
-  }
-  
+
   .contain {
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    margin-top: 30px;
   }
-  
-  #form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  /* Overwrite materialize styles for checkboxes and links */
-  [type="checkbox"].filled-in:checked+span:not(.lever):after {
-    border: 2px solid #1565C0;
-    background-color: #1565C0;
-  }
-  
-  .card .card-action a:not(.btn):not(.btn-large):not(.btn-small):not(.btn-large):not(.btn-floating) {
-    color: #1565C0;
-  }
-  
-  .card .card-action a:not(.btn):not(.btn-large):not(.btn-small):not(.btn-large):not(.btn-floating):hover {
-    color: #c6dcf5; /* Change to the desired color when hovering over the links */
-  }
-  
-  .teal.lighten-2 {
-    background-color: #4e342e !important;
-  }
-  
-  /* Overwrite materialize styles - inputs */
-  input:not([type]):focus:not([readonly]),
-  input[type="text"]:not(.browser-default):focus:not([readonly]),
-  input[type="password"]:not(.browser-default):focus:not([readonly]),
-  textarea.materialize-textarea:focus:not([readonly]) {
-    border-bottom: none;
-    -webkit-box-shadow: none;
-    box-shadow: none;
-  }
-  
-  /* Media queries for responsive design */
-  
-  /* Small screens (max-width: 500px) */
-  @media only screen and (max-width: 500px) {
-    .col.s12.m6.offset-m3 {
-      /* On small screens, center the card with a smaller left offset */
-      margin: 0 auto;
-      margin-left: 15px;
-      max-width: 455px;
-    }
-  }
-  
-  /* Medium screens (min-width: 501px) and (max-width: 992px) */
-  @media only screen and (min-width: 501px) and (max-width: 992px) {
-    .col.s12.m6.offset-m3 {
-      /* On medium screens, center the card with a smaller left offset */
-      margin: 0 auto;
-      margin-left: 15px;
-    }
-  
-    /* Reset the container width to allow centering on medium screens */
-    .container {
-      width: 100%;
-      padding: 0 20px;
-      max-width: none;
-    }
-  }
-  
-  /* Extra small screens (max-width: 500px) */
-  @media (max-width: 500px) {
-    #hero-image {
-      /* Adjust the top position for smaller screens */
-      top: 40px;
-    }
-  
-    .hero-content {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      text-align: center;
-      color: white;
-    }
-  
-    .hero-content h1 {
-      font-size: 3rem;
-    }
-  
-    .hero-content p {
-      font-size: 1.5rem;
-      max-width: 600px;
-      margin: 0 auto;
-    }
-  
-    .contain {
-      margin-top: 30px;
-    }
-  }
-  
-  /* Custom styles for collapsible-header */
-  .collapsible-header {
-    background-color: #4e342e; 
-    color: #fff; 
-    font-size: 22px; 
-    padding: 15px; 
-    cursor: pointer; 
-    text-align: center; 
-    display: flex; 
-    align-items: center; 
-    justify-content: center; 
-    text-transform: uppercase;
-  }
-  
-  /* Hover effect for collapsible-header */
-  .collapsible-header:hover {
-    background-color: #6d4c41; /* Change the background color on hover */
-  }
-  
-  /* Active state for collapsible-header */
-  .collapsible-header.active {
-    background-color: #795548; /* Change the background color for the active header */
-  }
-  
-  .collapsible {
-    border: none;
-    border-bottom: none;
-  }
+}
 
-  .collapsible-body {
-    padding: 10px;
-    background-color: #8d5f33;
-  }
-  
-  .collapsible-body p {
-    margin-bottom: 10px;
-    line-height: 1.6;
-    color: #ffffff;
-  }
-  
-  .collapsible-body h3 {
-    font-size: 1.8rem;
-    font-weight: bold;
-    margin-bottom: 15px;
-    color: #4e342e; /* Set the heading color */
-  }
-  
-  .collapsible-body hr {
-    margin: 20px 0;
-    border: none;
-  }
+/* Custom styles for collapsible-header */
+.collapsible-header {
+  background-color: #4e342e;
+  color: #fff;
+  font-size: 22px;
+  padding: 15px;
+  cursor: pointer;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+}
 
-  /* Trnsform the p elements in dashboard */
-  .cap {
-    text-transform: uppercase; 
-    font-weight: bold;
-  }
-  
+/* Hover effect for collapsible-header */
+.collapsible-header:hover {
+  background-color: #6d4c41;
+  /* Change the background color on hover */
+}
 
-  /* NAV AND DROPDOWN NAV */
+/* Active state for collapsible-header */
+.collapsible-header.active {
+  background-color: #795548;
+  /* Change the background color for the active header */
+}
+
+.collapsible {
+  border: none;
+  border-bottom: none;
+}
+
+.collapsible-body {
+  padding: 10px;
+  background-color: #8d5f33;
+}
+
+.collapsible-body p {
+  margin-bottom: 10px;
+  line-height: 1.6;
+  color: #ffffff;
+}
+
+.collapsible-body h3 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #4e342e;
+  /* Set the heading color */
+}
+
+.collapsible-body hr {
+  margin: 20px 0;
+  border: none;
+}
+
+/* Trnsform the p elements in dashboard */
+.cap {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+
+/* NAV AND DROPDOWN NAV */
 .nav-wrapper.brown.darken-3 {
   background: linear-gradient(to top, #2b1d1a, #a0837a);
 }
@@ -299,33 +296,52 @@ height: 20px;
 
 /* test */
 .card-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    padding: 20px;
-  }
-  .card-wrapper {
-    margin-bottom: 20px;
-  }
-  .card {
-    width: 350px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    text-align: center;
-  }
-  .card-image img {
-    width: 100%;
-    height: 300px; /* Set the height you desire for the images */
-    object-fit: cover;
-    border-radius: 8px 8px 0 0;
-  }
-  .card-title {
-    font-size: 18px;
-    margin-bottom: 10px;
-  }
-  .card-content p {
-    font-size: 14px;
-    color: #777;
-  }
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+.card-wrapper {
+  margin-bottom: 20px;
+}
+
+.card {
+  width: 350px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+}
+
+.card-image img {
+  width: 100%;
+  height: 300px;
+  /* Set the height you desire for the images */
+  object-fit: cover;
+  border-radius: 8px 8px 0 0;
+}
+
+.card-title {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.card-content p {
+  font-size: 14px;
+  color: #777;
+}
+
+.logo-icon {
+  width: 40px; /* Adjust the width as needed */
+  height: 40px; /* Adjust the height as needed */
+  margin-right: 10px; /* Add some space between the logo and text */
+  vertical-align: middle; /* Vertically align the logo with the text */
+}
+/* Custom styles for the logo and text */
+.brand-logo {
+  display: flex; /* Use flexbox to align the logo and text horizontally */
+  align-items: center; /* Vertically center the logo and text */
+  font-size: 1.5rem; /* Adjust the font size of the text */
+}
