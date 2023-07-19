@@ -25,15 +25,16 @@
       </a>
       <ul class="right hide-on-med-and-down">
         {{#unless isHome}}
-        <li> <a href="/">Home</a></li>
+        <li><a href="/">Home</a></li>
         {{/unless}}
         {{#if isLoggedIn}}
+        <li><a href="/about">About</a></li>
         <li><a href="/dashboard">My Cocktails</a></li>
         <li><a href="/logout">Log Out</a></li>
         {{else}}
+        <li><a href="/about">About</a></li>
         <li><a href="/login" class="{{#if isLogin}}active{{/if}}">Login</a></li>
         <li><a href="/register" class="{{#if isRegister}}active{{/if}}">Register</a></li>
-        <li><a href="/about">About</a></li>
         {{/if}}
       </ul>
       <a href="#" data-target="nav-mobile" class="sidenav-trigger right"><i class="material-icons">menu</i></a>
@@ -46,12 +47,13 @@
       <li> <a href="/">Home</a></li>
       {{/unless}}
       {{#if isLoggedIn}}
+      <li><a href="/about">About</a></li>
       <li><a href="/dashboard">My Cocktails</a></li>
       <li><a href="/logout">Log Out</a></li>
       {{else}}
+      <li><a href="/about">About</a></li>
       <li><a href="/login" class="{{#if isLogin}}active{{/if}}">Login</a></li>
       <li><a href="/register" class="{{#if isRegister}}active{{/if}}">Register</a></li>
-      <li><a href="/about">About</a></li>
       {{/if}}
     </ul>
   </header>
