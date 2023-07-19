@@ -66,7 +66,7 @@ var myWidget = cloudinary.createUploadWidget({
 
 document.addEventListener('click', e => {
   const el = e.target;
-  if (el.classList.contains('upload-widget')) {
+  if (el.classList.contains('cloudinary-button')) {
     favorite_id = el.dataset.id;
     myWidget.open();
   }
