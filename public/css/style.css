@@ -23,7 +23,7 @@ main {
 
 /* Body stuff */
 body {
-  background: linear-gradient(to top, #e0b677, #4b3609);
+  background: linear-gradient(to top, #97743f, #4b3609);
   display: flex;
   min-height: 100vh;
   flex-direction: column;
