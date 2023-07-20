@@ -10,7 +10,7 @@ But wait, the fun doesn't stop there! We know how much joy and pride you take in
 
 ![screenshot_2023-07-19_160848_720](https://github.com/ThomasSzentirmay/MixMate-App/assets/132217664/62fdabd5-6403-4d0c-be5f-aa32df279c0d)
 
-Visit the deployed application here: https://damp-sands-05604-06dad6d1e5b9.herokuapp.com/
+Visit the deployed application here: https://mixmatecocktails-1b7d39db7409.herokuapp.com/
 
 ## Technologies
 
