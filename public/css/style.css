@@ -228,9 +228,8 @@ textarea.materialize-textarea:focus:not([readonly]) {
 } */
 
 /* Extra small screens (max-width: 500px) */
-@media (max-width: 500px) {
+/* @media (max-width: 500px) {
   #hero-image {
-    /* Adjust the top position for smaller screens */
     top: 40px;
   }
 
@@ -256,7 +255,7 @@ textarea.materialize-textarea:focus:not([readonly]) {
   .contain {
     margin-top: 30px;
   }
-}
+} */
 
 /* Custom styles for collapsible-header */
 .collapsible-header {
