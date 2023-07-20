@@ -468,3 +468,13 @@ input[type="submit"]:hover {
   transform: scale(1.05);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
+
+.btn-contact-us {
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-contact-us:hover {
+  transform: scale(1.05);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
