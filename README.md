@@ -12,7 +12,7 @@ But wait, the fun doesn't stop there! We know how much joy and pride you take in
 
 Visit the deployed application here: 
 
-## Building process
+## Technologies
 
 The project was built with the following technologies: Node.js, Handlebars, MySQL, Express.js, Express-session, Sequelize, Cloudinary(Image Database), Cocktail Ninja API.
 
