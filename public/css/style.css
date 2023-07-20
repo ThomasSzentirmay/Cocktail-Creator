@@ -61,6 +61,7 @@ h1 {
   text-align: center;
   position: relative;
   top: 120px;
+  margin-bottom: 75px;
 }
 
 .verify-info-link:hover {
@@ -213,25 +214,22 @@ textarea.materialize-textarea:focus:not([readonly]) {
 }
 
 /* Medium screens (min-width: 501px) and (max-width: 992px) */
-@media only screen and (min-width: 501px) and (max-width: 992px) {
+/* @media only screen and (min-width: 501px) and (max-width: 992px) {
   .col.s12.m6.offset-m3 {
-    /* On medium screens, center the card with a smaller left offset */
     margin: 0 auto;
     margin-left: 15px;
   }
 
-  /* Reset the container width to allow centering on medium screens */
   .container {
     width: 100%;
     padding: 0 15px;
     max-width: none;
   }
-}
+} */
 
 /* Extra small screens (max-width: 500px) */
-@media (max-width: 500px) {
+/* @media (max-width: 500px) {
   #hero-image {
-    /* Adjust the top position for smaller screens */
     top: 40px;
   }
 
@@ -257,7 +255,7 @@ textarea.materialize-textarea:focus:not([readonly]) {
   .contain {
     margin-top: 30px;
   }
-}
+} */
 
 /* Custom styles for collapsible-header */
 .collapsible-header {
@@ -481,4 +479,18 @@ input[type="submit"]:hover {
 
 .signup-text {
   font-weight: bold;
+}
+
+@media (max-width: 600px) {
+  .center-div {
+    margin: 0 auto;
+    max-width: 600px;
+  }
+}
+
+@media (min-width: 600px) {
+  .center-div {
+    margin: 0 auto;
+    max-width: 600px;
+  }
 }
