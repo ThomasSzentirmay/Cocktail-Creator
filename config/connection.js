@@ -7,7 +7,7 @@ if (isProduction) {
     dialect: 'mysql'
   })
 } else {
-  connection = new Sequelize('tech_blog_db', 'root', '', {
+  connection = new Sequelize('cocktail_creator_db', 'root', process.env.DB_PASSWORD, {
     host: 'localhost',
     dialect: 'mysql'
   });
