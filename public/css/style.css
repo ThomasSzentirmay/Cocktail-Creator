@@ -23,7 +23,7 @@ main {
 
 /* Body stuff */
 body {
-  background-color: #f6ae2d;
+  background: linear-gradient(to top, #97743f, #4b3609);
   display: flex;
   min-height: 100vh;
   flex-direction: column;
@@ -40,6 +40,31 @@ h1 {
   font-weight: bold;
   text-transform: uppercase;
   color: #fff;
+}
+
+.about-section-title {
+  margin-top: 40px;
+}
+
+.community-title {
+  color: #fff;
+  text-align: center;
+}
+
+.verify-title {
+  text-align: center;
+  position: relative;
+  top: 110px;
+}
+
+.verify-info-link {
+  text-align: center;
+  position: relative;
+  top: 120px;
+}
+
+.verify-info-link:hover {
+  text-decoration: underline;
 }
 
 h3 {
@@ -406,4 +431,54 @@ textarea.materialize-textarea:focus:not([readonly]) {
 .footer-copyright {
   padding: 0;
   margin: 0;
+}
+
+.about-container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-wrapper {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-card {
+  height: 100vh;
+}
+
+.card.large {
+  height: 100%;
+}
+
+button,
+input[type="button"],
+input[type="submit"] {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+button:hover,
+input[type="button"]:hover,
+input[type="submit"]:hover {
+  transform: scale(1.05);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.btn-contact-us {
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-contact-us:hover {
+  transform: scale(1.05);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.signup-text {
+  font-weight: bold;
 }

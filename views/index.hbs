@@ -5,13 +5,14 @@
             right at home.</p>
         <div class="contain">
             <form id="form" action="/drink" method="POST">
-                <input class="search-input-box" type="text" id="name-search" placeholder="Enter a cocktail name" style="color: white;">
+                <input class="search-input-box" type="text" id="name-search" placeholder="Enter a cocktail name" style="color: #fff;">
                 <div id="name-suggestions"></div>
             </form>
         </div>
     </div>
-
 </div>
+
+<h4 class="community-title">What our community is drinking</h4>
 
 <div class="gallery-container">
     {{#each favorites}}
@@ -23,7 +24,7 @@
                     </div>
                     <span class="card-title">{{this.cocktailName}}</span>
                     <div class="card-content">
-                        <p>Sipped by: {{user.userName}}</p>
+                        <p>Sipped by {{user.userName}}</p>
                     </div>
                 </div>
             </div>
