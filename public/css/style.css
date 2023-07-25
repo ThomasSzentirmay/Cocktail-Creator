@@ -406,8 +406,13 @@ textarea.materialize-textarea:focus:not([readonly]) {
   font-size: 16px;
 }
 
+.age-verification-card {
+  background-color: #4b3609;
+}
+
 .card-content .verification-buttons {
   margin-top: 20px;
+  border-radius: 15px;
 }
 
 .search-input-box {
@@ -492,5 +497,34 @@ input[type="submit"]:hover {
   .center-div {
     margin: 0 auto;
     max-width: 600px;
+  }
+}
+
+
+/* MOBILE PHONE DESIGNS */
+@media (max-width: 400px) {
+  .age21 {
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    margin-right: 51px;
+    border-radius: 25px;
+  }
+
+  .age-verification-card {
+    border-radius: 50px;
+    background-color: #795548;
+    border: solid 1.5px #fff;
+  }
+
+  .verify-info-link {
+    text-decoration: underline;
+  }
+
+  .register-card {
+    width: 300px;
+    margin: 0 auto;
+    margin-left: 20px;
+    border-radius: 25px;
   }
 }
