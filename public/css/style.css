@@ -502,7 +502,7 @@ input[type="submit"]:hover {
 
 
 /* MOBILE PHONE DESIGNS */
-@media (max-width: 400px) {
+@media (max-width: 499px) {
   .age21 {
     width: 300px;
     display: flex;
